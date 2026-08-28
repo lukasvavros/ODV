@@ -1,0 +1,516 @@
+<style>
+  .arduino-page {
+    --orange: #ee7203;
+    --dark: #373841;
+    --light: #f5f5f5;
+    --text: #373841;
+    --white: #ffffff;
+
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: var(--text);
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .arduino-page *,
+  .arduino-page *::before,
+  .arduino-page *::after {
+    box-sizing: border-box;
+  }
+
+  .arduino-hero {
+    overflow: hidden;
+    border-radius: 0;
+    background: var(--white);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  .arduino-image-block {
+    position: relative;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    text-align: center;
+    padding: clamp(20px, 4vw, 45px);
+  }
+
+  .arduino-main-image {
+    width: clamp(130px, 23vw, 260px);
+    max-width: 50%;
+    height: auto;
+    display: inline-block;
+    border-radius: 14px;
+  }
+
+  .arduino-title {
+    background: var(--dark);
+    text-align: center;
+    padding: clamp(18px, 3vw, 32px) 18px;
+  }
+
+  .arduino-title h2 {
+    margin: 0;
+    color: var(--white);
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .arduino-title span {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--orange);
+    font-size: clamp(14px, 1.5vw, 18px);
+  }
+
+  .arduino-info {
+    background: var(--white);
+    padding: clamp(22px, 4vw, 46px);
+    border-left: 6px solid var(--orange);
+    border-right: 6px solid var(--orange);
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  .arduino-info p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: clamp(15px, 1.35vw, 18px);
+  }
+
+  .arduino-highlight {
+    color: var(--orange);
+    font-weight: 600;
+  }
+
+  .arduino-general,
+  .arduino-project,
+  .arduino-chapters {
+    padding: clamp(28px, 4vw, 56px) clamp(18px, 5vw, 70px);
+    border-left: 6px solid var(--orange);
+    border-right: 6px solid var(--orange);
+    border-top: 1px solid #eeeeee;
+  }
+
+  .arduino-general,
+  .arduino-chapters {
+    background: var(--white);
+  }
+
+  .arduino-project {
+    background: #fafafa;
+  }
+
+  .arduino-general-inner,
+  .arduino-project-inner,
+  .arduino-chapters-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .arduino-general h3,
+  .arduino-project h3,
+  .arduino-chapters h3 {
+    margin: 0 0 28px;
+    color: var(--dark);
+    font-size: clamp(22px, 2.4vw, 32px);
+    font-weight: 400;
+  }
+
+  .arduino-link-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .arduino-project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .arduino-link-card {
+    display: block;
+    padding: 22px 18px;
+    border-radius: 14px;
+    background: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+    border-top: 6px solid var(--orange);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .arduino-link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Stejný styl jako oranžové nadpisy v informačních bublinách */
+  .arduino-link-card strong {
+    display: block;
+    color: var(--orange);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .arduino-link-card span {
+    display: block;
+    font-size: clamp(13px, 1.1vw, 15px);
+    line-height: 1.5;
+  }
+
+  .arduino-chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .arduino-chapter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    padding: 16px 10px;
+    border-radius: 14px;
+    background: var(--light);
+    color: var(--dark);
+    text-decoration: none;
+    border-top: 6px solid var(--orange);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .arduino-chapter-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  }
+
+  .arduino-chapter-number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 9px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .arduino-chapter-name {
+    font-size: clamp(12px, 1vw, 14px);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .arduino-author {
+    background: var(--light);
+    padding: clamp(18px, 3vw, 28px);
+  }
+
+  .arduino-author-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .arduino-author-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--dark);
+    font-size: clamp(13px, 1.1vw, 15px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .arduino-author-item img {
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  .arduino-footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 12px 16px;
+    font-size: clamp(12px, 1vw, 14px);
+  }
+
+  @media (max-width: 1100px) {
+    .arduino-chapter-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .arduino-link-list,
+    .arduino-project-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .arduino-hero {
+      box-shadow: none;
+    }
+
+    .arduino-info {
+      border-left: none;
+      border-right: none;
+      border-top: 5px solid var(--orange);
+      border-bottom: 5px solid var(--orange);
+      text-align: left;
+    }
+
+    .arduino-general,
+    .arduino-project,
+    .arduino-chapters {
+      border-left: none;
+      border-right: none;
+      border-bottom: 5px solid var(--orange);
+    }
+
+    .arduino-chapter-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arduino-author-content {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .arduino-author-item {
+      justify-content: center;
+      border-radius: 12px;
+      text-align: center;
+    }
+  }
+</style>
+
+<div class="arduino-page">
+
+  <section class="arduino-hero">
+
+    <!-- Úvodní obrázek -->
+    <div class="arduino-image-block">
+      <img class="img-responsive atto_image_button_middle img-fluid arduino-main-image"
+           src="picture/3.png"
+           alt="Arduino – úvodní obrázek"
+           loading="lazy"
+           decoding="async">
+    </div>
+
+    <!-- Nadpis -->
+    <header class="arduino-title">
+      <h2>Praxe – Arduino</h2>
+      <span>Výukové materiály pro 3. ročník</span>
+    </header>
+
+    <!-- Informační blok -->
+    <main class="arduino-info">
+      <p>
+        Tato stránka slouží k předmětu
+        <span class="arduino-highlight">Praxe</span>, části
+        <span class="arduino-highlight">Arduino</span>, vyučovaném ve 3. ročníku
+        na Gymnáziu a Střední průmyslové škole elektrotechniky a informatiky
+        ve Frenštátě pod Radhoštěm.
+      </p>
+    </main>
+
+    <!-- Obecné informace -->
+    <section class="arduino-general">
+      <div class="arduino-general-inner">
+
+        <h3>Obecné informace</h3>
+
+        <div class="arduino-link-list">
+
+          <a class="arduino-link-card"
+             href="hodnoceni-predmetu.html"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Hodnocení předmětu</strong>
+            <span>Pravidla hodnocení, požadavky a podmínky splnění předmětu.</span>
+          </a>
+
+          <a class="arduino-link-card"
+             href="dokumenty/Arduino_tahak.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             type="application/pdf">
+            <strong>Tahák Arduino</strong>
+            <span>Arduino tahák vytvořený Tomášem Chovancem.</span>
+          </a>
+
+          <a class="arduino-link-card"
+             href="https://docs.arduino.cc/language-reference/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Dokumentace Arduino</strong>
+            <span>Oficiální dokumentace k deskám, programování a knihovnám Arduino.</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projekt -->
+    <section class="arduino-project">
+      <div class="arduino-project-inner">
+
+        <h3>Projekt</h3>
+
+        <div class="arduino-project-list">
+
+          <a class="arduino-link-card"
+             href="projekt-obecne-informace.html"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Obecné informace</strong>
+            <span>Základní informace k samostatnému projektu, zadání, termínům a odevzdání.</span>
+          </a>
+
+          <a class="arduino-link-card"
+             href="projekty-tridy-3ab.html"
+             target="_blank"
+             rel="noopener noreferrer">
+            <strong>Projekty třídy 3A/B</strong>
+            <span>Přehled projektů, rozdělení témat a informace pro třídy 3A/B.</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Kapitoly -->
+    <section class="arduino-chapters">
+      <div class="arduino-chapters-inner">
+
+        <h3>Kapitoly</h3>
+
+        <div class="arduino-chapter-grid">
+
+          <a class="arduino-chapter-card"
+             href="kapitola1.html">
+            <span class="arduino-chapter-number">1</span>
+            <span class="arduino-chapter-name">Úvod do Arduina</span>
+          </a>
+
+          <a class="arduino-chapter-card" 
+            href="kapitola2.html">
+            <span class="arduino-chapter-number">2</span>
+            <span class="arduino-chapter-name">Digitální a analogový vstup Arduina</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola3.html">
+            <span class="arduino-chapter-number">3</span>
+            <span class="arduino-chapter-name">Servomotor</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola4.html">
+            <span class="arduino-chapter-number">4</span>
+            <span class="arduino-chapter-name">PWM s Arduinem</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola5.html">
+            <span class="arduino-chapter-number">5</span>
+            <span class="arduino-chapter-name">Kapitola 5</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-06.html">
+            <span class="arduino-chapter-number">6</span>
+            <span class="arduino-chapter-name">Kapitola 6</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-07.html">
+            <span class="arduino-chapter-number">7</span>
+            <span class="arduino-chapter-name">Kapitola 7</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-08.html">
+            <span class="arduino-chapter-number">8</span>
+            <span class="arduino-chapter-name">Kapitola 8</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-09.html">
+            <span class="arduino-chapter-number">9</span>
+            <span class="arduino-chapter-name">Kapitola 9</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-10.html">
+            <span class="arduino-chapter-number">10</span>
+            <span class="arduino-chapter-name">Kapitola 10</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-11.html">
+            <span class="arduino-chapter-number">11</span>
+            <span class="arduino-chapter-name">Kapitola 11</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-12.html">
+            <span class="arduino-chapter-number">12</span>
+            <span class="arduino-chapter-name">Kapitola 12</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-13.html">
+            <span class="arduino-chapter-number">13</span>
+            <span class="arduino-chapter-name">Kapitola 13</span>
+          </a>
+
+          <a class="arduino-chapter-card" href="kapitola-14.html">
+            <span class="arduino-chapter-number">14</span>
+            <span class="arduino-chapter-name">Kapitola 14</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Autor a kontakt -->
+    <footer class="arduino-author">
+      <div class="arduino-author-content">
+
+        <span class="arduino-author-item">
+          <img class="image img-fluid"
+               src="picture/1.png"
+               alt=""
+               role="presentation"
+               style="width: 25px; height: 35px;">
+          <span>Vytvořil:&nbsp;<strong>Lukáš Vavroš</strong></span>
+        </span>
+
+        <span class="arduino-author-item">
+          <img class="img-responsive atto_image_button_text-bottom img-fluid"
+               src="picture/2.png"
+               alt=""
+               role="presentation"
+               style="width: 35px; height: 20px;">
+          <span>E-mail:&nbsp;<strong>lukasvavros519@gmail.com</strong></span>
+        </span>
+
+      </div>
+    </footer>
+
+    <div class="arduino-footer">
+      Gymnázium a SPŠEI Frenštát pod Radhoštěm
+    </div>
+
+  </section>
+
+</div>
