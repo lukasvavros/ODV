@@ -427,37 +427,6 @@
     font-size: clamp(12px, 1vw, 14px);
   }
 
-
-  /* Kritéria hodnocení */
-  .pra-grading-grid {
-    display: grid;
-    gap: 16px;
-    margin-top: 24px;
-  }
-
-  .pra-grading-card {
-    padding: 20px 22px;
-    border-left: 6px solid var(--orange);
-    border-radius: 12px;
-    background: var(--light);
-    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.07);
-    font-size: clamp(15px, 1.3vw, 18px);
-    line-height: 1.7;
-  }
-
-  .pra-grading-card strong {
-    color: var(--orange);
-  }
-
-  .pra-grading-warning {
-    background: #fff4e8;
-    border-left-color: var(--orange);
-  }
-
-  .pra-grading-warning strong {
-    color: var(--orange);
-  }
-
   @media (max-width: 850px) {
     .pra-spec-grid,
     .pra-summary,
@@ -500,6 +469,131 @@
       text-align: center;
     }
   }
+
+  /* ========================================================= */
+  /* GALERIE OBRÁZKŮ */
+  /* ========================================================= */
+
+  .pra-gallery {
+    position: relative;
+    width: min(760px, 100%);
+    margin: 28px auto 24px;
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--white);
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .pra-gallery-image {
+    display: none;
+    text-align: center;
+  }
+
+  .pra-gallery-image.active {
+    display: block;
+  }
+
+  .pra-gallery-image img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: var(--white);
+  }
+
+  .pra-gallery-caption {
+    margin-top: 12px;
+    padding: 0 50px;
+    color: var(--dark);
+    font-size: clamp(13px, 1.15vw, 15px);
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .pra-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--white);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s ease;
+  }
+
+  .pra-gallery-arrow:hover {
+    background: var(--orange);
+  }
+
+  .pra-gallery-arrow.prev {
+    left: 26px;
+  }
+
+  .pra-gallery-arrow.next {
+    right: 26px;
+  }
+
+  .pra-gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .pra-gallery-dot {
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #b9b9b9;
+    cursor: pointer;
+  }
+
+  .pra-gallery-dot.active {
+    background: var(--orange);
+  }
+
+  @media (max-width: 620px) {
+    .pra-gallery {
+      padding: 10px;
+    }
+
+    .pra-gallery-image img {
+      height: 280px;
+    }
+
+    .pra-gallery-caption {
+      padding: 0 42px;
+    }
+
+    .pra-gallery-arrow {
+      width: 40px;
+      height: 40px;
+      font-size: 26px;
+    }
+
+    .pra-gallery-arrow.prev {
+      left: 16px;
+    }
+
+    .pra-gallery-arrow.next {
+      right: 16px;
+    }
+  }
+
 </style>
 
 <div class="pra-chapter">
@@ -508,51 +602,6 @@
     <h1>Kapitola 1: Značení vodičů, kabelů, přístrojů a svorek</h1>
     <p>Odborný výcvik – Jednoduché elektromontážní práce | 1. ročník</p>
   </header>
-
-
-  <section class="pra-section">
-    <div class="pra-container">
-      <h2>Kritéria hodnocení</h2>
-
-      <div class="pra-grading-grid">
-
-        <div class="pra-grading-card">
-          <strong>Krátké testy na probrané učivo</strong><br>
-          Váha známky: <strong>0,25</strong>
-        </div>
-
-        <div class="pra-grading-card">
-          <strong>Dobrovolná známka za aktivitu v hodině</strong><br>
-          Váha známky: <strong>0,25</strong>
-        </div>
-
-        <div class="pra-grading-card">
-          <strong>Jeden samostatný projekt</strong><br>
-          Projekt je ohodnocen <strong>dvěma známkami</strong>.
-        </div>
-
-        <div class="pra-grading-card">
-          <strong>Realizace projektu</strong><br>
-          Zapojení, program a prezentace.<br>
-          Váha známky: <strong>1,0</strong>
-        </div>
-
-        <div class="pra-grading-card">
-          <strong>Dokumentace projektu</strong><br>
-          Váha známky: <strong>1,0</strong>
-        </div>
-
-        <div class="pra-grading-card pra-grading-warning">
-          <strong>Podmínka úspěšného dokončení předmětu</strong><br>
-          Úspěšné odevzdání projektu je nezbytnou podmínkou pro úspěšné dokončení předmětu.
-          Neodevzdaný nebo neuznaný projekt či jeho dokumentace znamená známku
-          <strong>Nedostatečný</strong> za tuto část PRA a tím i na vysvědčení
-          <strong>(viz školní řád)</strong>.
-        </div>
-
-      </div>
-    </div>
-  </section>
 
 <section class="pra-section alt">
   <div class="pra-container">
@@ -679,6 +728,70 @@
 
       </div>
 
+
+
+      <!-- =================================================== -->
+      <!-- GALERIE HOLÝCH VODIČŮ -->
+      <!-- =================================================== -->
+
+      <div class="pra-gallery" aria-label="Galerie holých vodičů">
+
+        <div class="pra-gallery-image active">
+          <img src="picture/13.jpg"
+               alt="Holé vodiče venkovního elektrického vedení"
+               loading="lazy"
+               decoding="async">
+
+          <div class="pra-gallery-caption">
+            Holé vodiče používané u venkovního elektrického vedení.
+          </div>
+        </div>
+
+        <div class="pra-gallery-image">
+          <img src="picture/14.jpg"
+               alt="Trolejové vedení tramvají nebo vlaků"
+               loading="lazy"
+               decoding="async">
+
+          <div class="pra-gallery-caption">
+            Trolejové vedení používané pro napájení tramvají a vlaků.
+          </div>
+        </div>
+
+        <div class="pra-gallery-image">
+          <img src="picture/15.jpg"
+               alt="Holé přípojnice v elektrickém rozváděči"
+               loading="lazy"
+               decoding="async">
+
+          <div class="pra-gallery-caption">
+            Holé přípojnice používané v elektrických rozváděčích a rozvodnách.
+          </div>
+        </div>
+
+        <button class="pra-gallery-arrow prev"
+                type="button"
+                aria-label="Předchozí obrázek">‹</button>
+
+        <button class="pra-gallery-arrow next"
+                type="button"
+                aria-label="Další obrázek">›</button>
+
+        <div class="pra-gallery-dots" aria-label="Výběr obrázku">
+          <button class="pra-gallery-dot active"
+                  type="button"
+                  aria-label="Zobrazit obrázek 1"></button>
+
+          <button class="pra-gallery-dot"
+                  type="button"
+                  aria-label="Zobrazit obrázek 2"></button>
+
+          <button class="pra-gallery-dot"
+                  type="button"
+                  aria-label="Zobrazit obrázek 3"></button>
+        </div>
+
+      </div>
 
       <div class="pra-led-note">
         <strong>Zapamatujte si:</strong>
@@ -1466,3 +1579,45 @@ void loop() {
   </div>
 
 </div>
+
+
+<script>
+document.querySelectorAll('.pra-gallery').forEach(function(gallery) {
+  const slides = gallery.querySelectorAll('.pra-gallery-image');
+  const dots = gallery.querySelectorAll('.pra-gallery-dot');
+  const prev = gallery.querySelector('.pra-gallery-arrow.prev');
+  const next = gallery.querySelector('.pra-gallery-arrow.next');
+  let current = 0;
+
+  function showSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    slides.forEach(function(slide) {
+      slide.classList.remove('active');
+    });
+
+    dots.forEach(function(dot) {
+      dot.classList.remove('active');
+    });
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    current = index;
+  }
+
+  prev.addEventListener('click', function() {
+    showSlide(current - 1);
+  });
+
+  next.addEventListener('click', function() {
+    showSlide(current + 1);
+  });
+
+  dots.forEach(function(dot, index) {
+    dot.addEventListener('click', function() {
+      showSlide(index);
+    });
+  });
+});
+</script>
