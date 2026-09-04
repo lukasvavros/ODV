@@ -647,6 +647,203 @@
     line-height: 1.7;
   }
 
+
+
+  /* ========================================================= */
+  /* IDENTIFIKACE VODIČŮ A SVOREK */
+  /* ========================================================= */
+
+  .pra-ident-intro {
+    margin-bottom: 26px;
+  }
+
+  .pra-ident-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 30px;
+  }
+
+  .pra-ident-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: var(--light);
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .pra-ident-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .pra-ident-card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border-top: 6px solid var(--orange);
+    background: var(--light);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.07);
+  }
+
+  .pra-ident-card.wide {
+    grid-column: 1 / -1;
+  }
+
+  .pra-ident-card h3 {
+    margin: 0;
+    padding: 18px 20px 14px;
+    font-size: clamp(20px, 2vw, 27px);
+    color: var(--dark);
+  }
+
+  .pra-ident-card-note {
+    margin: -3px 20px 16px !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .pra-ident-scroll {
+    overflow-x: auto;
+  }
+
+  .pra-ident-table {
+    width: 100%;
+    min-width: 590px;
+    border-collapse: collapse;
+    background: var(--white);
+    font-size: 14px;
+  }
+
+  .pra-ident-card.wide .pra-ident-table {
+    min-width: 760px;
+  }
+
+  .pra-ident-table th,
+  .pra-ident-table td {
+    padding: 11px 12px;
+    border: 1px solid #d6d6d6;
+    vertical-align: middle;
+  }
+
+  .pra-ident-table th {
+    background: #ececef;
+    color: var(--dark);
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .pra-ident-table th.center,
+  .pra-ident-table td.center {
+    text-align: center;
+  }
+
+  .pra-ident-table tbody tr:nth-child(even) td {
+    background: #fbfbfb;
+  }
+
+  .pra-ident-code {
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .pra-color-set {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .pra-color-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .pra-color-dot {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    display: inline-block;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+  }
+
+  .pra-c-bk { background: #111111; }
+  .pra-c-bn { background: #8b5a2b; }
+  .pra-c-gy { background: #8f9295; }
+  .pra-c-bu { background: #2f16e8; }
+  .pra-c-rd { background: #ed1028; }
+  .pra-c-wh { background: #ffffff; }
+  .pra-c-pk { background: #e65ce8; }
+
+  .pra-c-gnye {
+    background: repeating-linear-gradient(
+      135deg,
+      #f1e500 0 4px,
+      #f1e500 4px 7px,
+      #36c54a 7px 11px,
+      #36c54a 11px 14px
+    );
+  }
+
+  .pra-ident-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 30px;
+    color: #202124;
+    font-size: 27px;
+    line-height: 1;
+  }
+
+  .pra-ident-symbol svg {
+    display: block;
+    width: 38px;
+    height: 30px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .pra-ident-muted {
+    color: #6d6e72;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .pra-ident-footnote {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-left: 6px solid var(--orange);
+    border-radius: 10px;
+    background: var(--light);
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 850px) {
+    .pra-ident-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pra-ident-card.wide {
+      grid-column: auto;
+    }
+  }
+
 </style>
 
 <div class="pra-chapter">
@@ -1404,90 +1601,305 @@
 
   <section class="pra-section">
     <div class="pra-container">
-      <h2>Hardware – Arduino UNO</h2>
+      <h2>Identifikace vodičů a svorek</h2>
 
-      <p>
-        Existuje mnoho typů Arduino desek. Liší se výkonem, počtem pinů,
-        pamětí a možnostmi komunikace, například přes WiFi nebo Bluetooth.
-        V hodinách budeme používat především Arduino UNO s mikrokontrolérem
-        <span class="pra-highlight">ATmega 328</span>.
-      </p>
+      <div class="pra-ident-intro">
+        <p>
+          V elektrických instalacích se vodiče a jejich svorky označují tak,
+          aby bylo možné rychle poznat jejich <strong>funkci, barvu a označení</strong>.
+          Používá se písmeno-číslicový zápis, barevné označení a u některých vodičů
+          také grafická značka.
+        </p>
 
-      <div class="pra-spec-grid">
-        <div class="pra-spec-card">
-          <strong>Mikrokontrolér</strong>
-          <span>ATmega 328</span>
-        </div>
-
-        <div class="pra-spec-card">
-          <strong>Taktovací frekvence</strong>
-          <span>16 MHz</span>
-        </div>
-
-        <div class="pra-spec-card">
-          <strong>Flash paměť</strong>
-          <span>32 KB</span>
-        </div>
-
-        <div class="pra-spec-card">
-          <strong>SRAM</strong>
-          <span>2 KB</span>
-        </div>
-
-        <div class="pra-spec-card">
-          <strong>EEPROM</strong>
-          <span>1 KB</span>
-        </div>
-
-        <div class="pra-spec-card">
-          <strong>Piny</strong>
-          <span>Digitální piny, analogové vstupy a napájecí piny.</span>
-        </div>
+        <p>
+          Následující přehled je rozdělen do několika menších tabulek,
+          aby se v něm žáci 1. ročníku snadněji orientovali.
+        </p>
       </div>
 
-      <h3>Základní části desky</h3>
-
-      <div class="pra-parts-list">
-        <div class="pra-part">
-          <strong>Mikrokontrolér:</strong> vykonává program uložený v paměti desky.
-        </div>
-
-        <div class="pra-part">
-          <strong>USB port:</strong> slouží pro programování desky a napájení z počítače.
-        </div>
-
-        <div class="pra-part">
-          <strong>Digitální piny:</strong> používají se pro práci se stavem HIGH a LOW.
-        </div>
-
-        <div class="pra-part">
-          <strong>Analogové piny:</strong> slouží například pro čtení hodnot čidel.
-        </div>
-
-        <div class="pra-part">
-          <strong>GND:</strong> společný záporný bod zapojení.
-        </div>
-
-        <div class="pra-part">
-          <strong>5 V / 3,3 V / VIN:</strong> piny pro napájení připojených součástek.
-        </div>
+      <div class="pra-ident-legend" aria-label="Zkratky barev">
+        <span><i class="pra-color-dot pra-c-bk"></i><strong>BK</strong> černá</span>
+        <span><i class="pra-color-dot pra-c-bn"></i><strong>BN</strong> hnědá</span>
+        <span><i class="pra-color-dot pra-c-gy"></i><strong>GY</strong> šedá</span>
+        <span><i class="pra-color-dot pra-c-bu"></i><strong>BU</strong> modrá</span>
+        <span><i class="pra-color-dot pra-c-rd"></i><strong>RD</strong> červená</span>
+        <span><i class="pra-color-dot pra-c-wh"></i><strong>WH</strong> bílá</span>
+        <span><i class="pra-color-dot pra-c-gnye"></i><strong>GNYE</strong> zelenožlutá</span>
+        <span><i class="pra-color-dot pra-c-pk"></i><strong>PK</strong> růžová</span>
       </div>
 
-      <div class="pra-hardware-images">
-        <img src="picture/4.png"
-             alt="Popis základních částí desky Arduino UNO"
-             loading="lazy"
-             decoding="async">
+      <div class="pra-ident-grid">
 
-        <img src="picture/5.png"
-             alt="Přehled pinů desky Arduino UNO"
-             loading="lazy"
-             decoding="async">
+        <!-- AC VODIČE -->
+        <div class="pra-ident-card wide">
+          <h3>AC vodiče – střídavá soustava</h3>
+          <p class="pra-ident-card-note">
+            Fázové vodiče se označují L1, L2 a L3. Pro jejich barevné rozlišení se používají
+            <strong>černá (BK), hnědá (BN) a šedá (GY)</strong>.
+          </p>
+
+          <div class="pra-ident-scroll">
+            <table class="pra-ident-table">
+              <thead>
+                <tr>
+                  <th>Vybraný vodič / svorka</th>
+                  <th class="center">Vodič</th>
+                  <th class="center">Svorka</th>
+                  <th>Barva</th>
+                  <th class="center">Grafická značka</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>AC – střídavý proud</strong></td>
+                  <td class="center pra-ident-code">AC</td>
+                  <td class="center pra-ident-code">AC</td>
+                  <td class="center">–</td>
+                  <td class="center"><span class="pra-ident-symbol" aria-label="střídavý proud">∿</span></td>
+                </tr>
+                <tr>
+                  <td>Vodič vedení (fáze) 1</td>
+                  <td class="center pra-ident-code">L1</td>
+                  <td class="center pra-ident-code">U</td>
+                  <td rowspan="3">
+                    <span class="pra-color-set">
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-bk"></i>BK</span>
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-bn"></i>BN</span>
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-gy"></i>GY</span>
+                    </span>
+                  </td>
+                  <td rowspan="3" class="center"><span class="pra-ident-symbol" aria-label="střídavý proud">∿</span></td>
+                </tr>
+                <tr>
+                  <td>Vodič vedení (fáze) 2</td>
+                  <td class="center pra-ident-code">L2</td>
+                  <td class="center pra-ident-code">V</td>
+                </tr>
+                <tr>
+                  <td>Vodič vedení (fáze) 3</td>
+                  <td class="center pra-ident-code">L3</td>
+                  <td class="center pra-ident-code">W</td>
+                </tr>
+                <tr>
+                  <td>Vodič středního bodu</td>
+                  <td class="center pra-ident-code">M</td>
+                  <td class="center pra-ident-code">M</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span></td>
+                  <td rowspan="2" class="center pra-ident-muted">není doporučena</td>
+                </tr>
+                <tr>
+                  <td>Nulový vodič</td>
+                  <td class="center pra-ident-code">N</td>
+                  <td class="center pra-ident-code">N</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- DC VODIČE -->
+        <div class="pra-ident-card">
+          <h3>DC vodiče – stejnosměrná soustava</h3>
+          <div class="pra-ident-scroll">
+            <table class="pra-ident-table">
+              <thead>
+                <tr>
+                  <th>Vodič</th>
+                  <th class="center">Zápis</th>
+                  <th class="center">Svorka</th>
+                  <th>Barva</th>
+                  <th class="center">Značka</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>DC – stejnosměrný proud</strong></td>
+                  <td class="center pra-ident-code">DC</td>
+                  <td class="center pra-ident-code">DC</td>
+                  <td class="center">–</td>
+                  <td class="center"><span class="pra-ident-symbol" aria-label="stejnosměrný proud"><svg viewBox="0 0 40 30" aria-hidden="true"><path d="M8 10H32"/><path d="M8 19H15 M19 19H25 M29 19H32"/></svg></span></td>
+                </tr>
+                <tr>
+                  <td>Kladný vodič</td>
+                  <td class="center pra-ident-code">L+</td>
+                  <td class="center pra-ident-code">+</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-rd"></i>RD</span></td>
+                  <td class="center"><span class="pra-ident-symbol">+</span></td>
+                </tr>
+                <tr>
+                  <td>Záporný vodič</td>
+                  <td class="center pra-ident-code">L-</td>
+                  <td class="center pra-ident-code">-</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-wh"></i>WH</span></td>
+                  <td class="center"><span class="pra-ident-symbol">−</span></td>
+                </tr>
+                <tr>
+                  <td>Vodič středního bodu</td>
+                  <td class="center pra-ident-code">M</td>
+                  <td class="center pra-ident-code">M</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span></td>
+                  <td rowspan="2" class="center pra-ident-muted">není doporučena</td>
+                </tr>
+                <tr>
+                  <td>Nulový vodič</td>
+                  <td class="center pra-ident-code">N</td>
+                  <td class="center pra-ident-code">N</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- OCHRANNÉ VODIČE -->
+        <div class="pra-ident-card">
+          <h3>Ochranné vodiče</h3>
+          <div class="pra-ident-scroll">
+            <table class="pra-ident-table">
+              <thead>
+                <tr>
+                  <th>Vodič</th>
+                  <th class="center">Zápis</th>
+                  <th class="center">Svorka</th>
+                  <th>Barva</th>
+                  <th class="center">Značka</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ochranný vodič</td>
+                  <td class="center pra-ident-code">PE</td>
+                  <td class="center pra-ident-code">PE</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-gnye"></i>GNYE</span></td>
+                  <td class="center"><span class="pra-ident-symbol" aria-label="ochranné uzemnění"><svg viewBox="0 0 40 32" aria-hidden="true"><circle cx="20" cy="16" r="11"/><path d="M20 5V18 M13 18H27 M15.5 22H24.5 M18 26H22"/></svg></span></td>
+                </tr>
+                <tr>
+                  <td>PEN vodič</td>
+                  <td class="center pra-ident-code">PEN</td>
+                  <td class="center pra-ident-code">PEN</td>
+                  <td>
+                    <span class="pra-color-set">
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-gnye"></i>GNYE</span>
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span>
+                    </span>
+                  </td>
+                  <td rowspan="3" class="center pra-ident-muted">není doporučena</td>
+                </tr>
+                <tr>
+                  <td>PEL vodič</td>
+                  <td class="center pra-ident-code">PEL</td>
+                  <td class="center pra-ident-code">PEL</td>
+                  <td>
+                    <span class="pra-color-set">
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-gnye"></i>GNYE</span>
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PEM vodič</td>
+                  <td class="center pra-ident-code">PEM</td>
+                  <td class="center pra-ident-code">PEM</td>
+                  <td>
+                    <span class="pra-color-set">
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-gnye"></i>GNYE</span>
+                      <span class="pra-color-item"><i class="pra-color-dot pra-c-bu"></i>BU</span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- OCHRANNÉ POSPOJOVÁNÍ -->
+        <div class="pra-ident-card">
+          <h3>Vodiče ochranného pospojování</h3>
+          <div class="pra-ident-scroll">
+            <table class="pra-ident-table">
+              <thead>
+                <tr>
+                  <th>Vodič</th>
+                  <th class="center">Zápis</th>
+                  <th class="center">Svorka</th>
+                  <th>Barva</th>
+                  <th class="center">Značka</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ochranné pospojování</td>
+                  <td class="center pra-ident-code">PB</td>
+                  <td class="center pra-ident-code">PB</td>
+                  <td class="center">–</td>
+                  <td class="center"><span class="pra-ident-symbol" aria-label="ochranné pospojování"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M20 4V15 M12 15H28 M14 15L20 25 26 15 M17 25H23"/></svg></span></td>
+                </tr>
+                <tr>
+                  <td>Uzemněné</td>
+                  <td class="center pra-ident-code">PBE</td>
+                  <td class="center pra-ident-code">PBE</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-gnye"></i>GNYE</span></td>
+                  <td rowspan="2" class="center pra-ident-muted">není doporučena</td>
+                </tr>
+                <tr>
+                  <td>Neuzemněné</td>
+                  <td class="center pra-ident-code">PBU</td>
+                  <td class="center pra-ident-code">PBU</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-gnye"></i>GNYE</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PRACOVNÍ VODIČE -->
+        <div class="pra-ident-card">
+          <h3>Pracovní uzemnění a pospojování</h3>
+          <div class="pra-ident-scroll">
+            <table class="pra-ident-table">
+              <thead>
+                <tr>
+                  <th>Vodič</th>
+                  <th class="center">Zápis</th>
+                  <th class="center">Svorka</th>
+                  <th>Barva</th>
+                  <th class="center">Značka</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vodič pracovního uzemnění</td>
+                  <td class="center pra-ident-code">FE</td>
+                  <td class="center pra-ident-code">FE</td>
+                  <td><span class="pra-color-item"><i class="pra-color-dot pra-c-pk"></i>PK</span></td>
+                  <td class="center"><span class="pra-ident-symbol" aria-label="pracovní uzemnění"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M20 4V19 M10 21C12 13 28 13 30 21 M12 21H28 M15 25H25"/></svg></span></td>
+                </tr>
+                <tr>
+                  <td>Vodič pracovního pospojování</td>
+                  <td class="center pra-ident-code">FB</td>
+                  <td class="center pra-ident-code">FB</td>
+                  <td class="pra-ident-muted">doporučení není nutné</td>
+                  <td class="center"><span class="pra-ident-symbol" aria-label="pracovní pospojování"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M20 4V18 M14 18H26 M16 18L12 27 M21 18L18 27 M26 18L24 27"/></svg></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
+
+      <div class="pra-ident-footnote">
+        <strong>Zapamatujte si:</strong>
+        Nejdříve sledujeme <strong>písmeno-číslicové označení</strong>, potom
+        <strong>barvu vodiče</strong> a případně <strong>grafickou značku</strong>.
+        Barevné zkratky v tabulkách odpovídají přehledu uvedenému nahoře.
+      </div>
+
     </div>
   </section>
 
-  <section class="pra-section alt">
+<section class="pra-section alt">
     <div class="pra-container">
       <h2>Princip fungování embedded systémů</h2>
 
