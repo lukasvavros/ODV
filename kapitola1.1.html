@@ -594,6 +594,59 @@
     }
   }
 
+
+
+  /* ========================================================= */
+  /* DOPLŇKOVÉ BAREVNÉ OZNAČENÍ HOLÝCH VODIČŮ */
+  /* ========================================================= */
+
+  .pra-marking-box {
+    margin: 30px 0 26px;
+    padding: clamp(20px, 3vw, 28px);
+    border-radius: 16px;
+    border-top: 6px solid var(--orange);
+    background: var(--white);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.07);
+  }
+
+  .pra-marking-box h4 {
+    margin: 0 0 14px;
+    color: var(--orange);
+    font-size: clamp(19px, 1.8vw, 24px);
+  }
+
+  .pra-marking-box p {
+    margin: 0 0 14px;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.7;
+  }
+
+  .pra-marking-svg {
+    margin-top: 22px;
+    padding: 14px;
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid #e6e6e6;
+    background: var(--white);
+  }
+
+  .pra-marking-svg svg {
+    display: block;
+    width: 100%;
+    min-width: 720px;
+    height: auto;
+  }
+
+  .pra-marking-note {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-left: 6px solid var(--orange);
+    border-radius: 10px;
+    background: var(--light);
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.7;
+  }
+
 </style>
 
 <div class="pra-chapter">
@@ -729,6 +782,198 @@
       </div>
 
 
+
+
+
+      <!-- =================================================== -->
+      <!-- DOPLŇKOVÉ BAREVNÉ OZNAČENÍ HOLÝCH VODIČŮ -->
+      <!-- =================================================== -->
+
+      <div class="pra-marking-box">
+
+        <h4>Doplňkové barevné označení holých vodičů</h4>
+
+        <p>
+          Pokud je potřeba rozlišit vodiče jednotlivých fází, může se k
+          <strong>oranžové barvě</strong> doplnit označení
+          <strong>černými příčnými pruhy</strong>.
+        </p>
+
+        <p>
+          <strong>1. fáze</strong> se označí jedním černým pruhem,
+          <strong>2. fáze</strong> dvěma pruhy a <strong>3. fáze</strong>
+          třemi pruhy. U samostatné jednofázové soustavy se použije pouze
+          oranžová barva bez černých pruhů.
+        </p>
+
+        <p>
+          Černé pruhy mají být úzké a příčné. V původním značení je uveden
+          poměr šířky pruhu k výšce vodiče přibližně <strong>1 : 4</strong>,
+          největší šířka pruhu je <strong>30 mm</strong> a mezera mezi pruhy
+          má být přibližně stejná jako jejich šířka.
+        </p>
+
+        <div class="pra-marking-svg">
+          <svg viewBox="0 0 1000 500"
+               xmlns="http://www.w3.org/2000/svg"
+               role="img"
+               aria-label="Doplňkové označení oranžových fázových vodičů černými pruhy a ochranného vodiče žlutozeleným značením">
+
+            <defs>
+              <linearGradient id="orangeTop" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#ff9b5b"/>
+                <stop offset="100%" stop-color="#ee7203"/>
+              </linearGradient>
+              <linearGradient id="orangeSide" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#f08a4b"/>
+                <stop offset="100%" stop-color="#d96000"/>
+              </linearGradient>
+            </defs>
+
+            <text x="500" y="42"
+                  text-anchor="middle"
+                  font-family="Verdana, Arial, sans-serif"
+                  font-size="28"
+                  font-weight="700"
+                  fill="#373841">
+              Rozlišení jednotlivých fází
+            </text>
+
+            <!-- 1. fáze -->
+            <g transform="translate(75,95)">
+              <polygon points="0,42 35,12 230,12 195,42"
+                       fill="url(#orangeTop)" stroke="#4b4b4b" stroke-width="2"/>
+              <rect x="0" y="42" width="195" height="56"
+                    fill="#f08a4b" stroke="#4b4b4b" stroke-width="2"/>
+              <polygon points="195,42 230,12 230,68 195,98"
+                       fill="url(#orangeSide)" stroke="#4b4b4b" stroke-width="2"/>
+
+              <polygon points="86,12 104,12 69,42 51,42"
+                       fill="#111111"/>
+
+              <text x="98" y="135" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="22" font-weight="700" fill="#373841">
+                1. fáze
+              </text>
+              <text x="98" y="162" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="17" fill="#666666">
+                1 černý pruh
+              </text>
+            </g>
+
+            <!-- 2. fáze -->
+            <g transform="translate(385,95)">
+              <polygon points="0,42 35,12 230,12 195,42"
+                       fill="url(#orangeTop)" stroke="#4b4b4b" stroke-width="2"/>
+              <rect x="0" y="42" width="195" height="56"
+                    fill="#f08a4b" stroke="#4b4b4b" stroke-width="2"/>
+              <polygon points="195,42 230,12 230,68 195,98"
+                       fill="url(#orangeSide)" stroke="#4b4b4b" stroke-width="2"/>
+
+              <polygon points="73,12 91,12 56,42 38,42" fill="#111111"/>
+              <polygon points="111,12 129,12 94,42 76,42" fill="#111111"/>
+
+              <text x="98" y="135" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="22" font-weight="700" fill="#373841">
+                2. fáze
+              </text>
+              <text x="98" y="162" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="17" fill="#666666">
+                2 černé pruhy
+              </text>
+            </g>
+
+            <!-- 3. fáze -->
+            <g transform="translate(695,95)">
+              <polygon points="0,42 35,12 230,12 195,42"
+                       fill="url(#orangeTop)" stroke="#4b4b4b" stroke-width="2"/>
+              <rect x="0" y="42" width="195" height="56"
+                    fill="#f08a4b" stroke="#4b4b4b" stroke-width="2"/>
+              <polygon points="195,42 230,12 230,68 195,98"
+                       fill="url(#orangeSide)" stroke="#4b4b4b" stroke-width="2"/>
+
+              <polygon points="60,12 78,12 43,42 25,42" fill="#111111"/>
+              <polygon points="98,12 116,12 81,42 63,42" fill="#111111"/>
+              <polygon points="136,12 154,12 119,42 101,42" fill="#111111"/>
+
+              <text x="98" y="135" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="22" font-weight="700" fill="#373841">
+                3. fáze
+              </text>
+              <text x="98" y="162" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="17" fill="#666666">
+                3 černé pruhy
+              </text>
+            </g>
+
+            <!-- Dolní část -->
+            <line x1="70" y1="300" x2="930" y2="300"
+                  stroke="#dddddd" stroke-width="2"/>
+
+            <text x="500" y="340"
+                  text-anchor="middle"
+                  font-family="Verdana, Arial, sans-serif"
+                  font-size="24"
+                  font-weight="700"
+                  fill="#373841">
+              Další příklady barevného označení
+            </text>
+
+            <!-- Jednofázová soustava -->
+            <g transform="translate(125,375)">
+              <rect x="0" y="0" width="260" height="42" rx="5"
+                    fill="#f08a4b" stroke="#4b4b4b" stroke-width="2"/>
+              <text x="130" y="77" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="19" font-weight="700" fill="#373841">
+                Jednofázová soustava
+              </text>
+              <text x="130" y="104" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="16" fill="#666666">
+                oranžová bez černých pruhů
+              </text>
+            </g>
+
+            <!-- Ochranný vodič -->
+            <g transform="translate(610,375)">
+              <rect x="0" y="0" width="90" height="42" rx="5 0 0 5"
+                    fill="#f2d53c"/>
+              <rect x="90" y="0" width="90" height="42"
+                    fill="#2fa64a"/>
+              <rect x="180" y="0" width="90" height="42" rx="0 5 5 0"
+                    fill="#f2d53c"/>
+              <rect x="0" y="0" width="270" height="42" rx="5"
+                    fill="none" stroke="#4b4b4b" stroke-width="2"/>
+
+              <text x="135" y="77" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="19" font-weight="700" fill="#373841">
+                Ochranný vodič
+              </text>
+              <text x="135" y="104" text-anchor="middle"
+                    font-family="Verdana, Arial, sans-serif"
+                    font-size="16" fill="#666666">
+                žlutá / zelená / žlutá
+              </text>
+            </g>
+
+          </svg>
+        </div>
+
+        <div class="pra-marking-note">
+          <strong>Zapamatujte si:</strong>
+          Černé pruhy na oranžovém vodiči slouží k rozlišení jednotlivých fází.
+          Jeden pruh označuje 1. fázi, dva pruhy 2. fázi a tři pruhy 3. fázi.
+        </div>
+
+      </div>
 
       <!-- =================================================== -->
       <!-- GALERIE HOLÝCH VODIČŮ -->
