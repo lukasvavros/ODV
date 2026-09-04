@@ -427,6 +427,37 @@
     font-size: clamp(12px, 1vw, 14px);
   }
 
+
+  /* Kritéria hodnocení */
+  .pra-grading-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .pra-grading-card {
+    padding: 20px 22px;
+    border-left: 6px solid var(--orange);
+    border-radius: 12px;
+    background: var(--light);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.07);
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.7;
+  }
+
+  .pra-grading-card strong {
+    color: var(--orange);
+  }
+
+  .pra-grading-warning {
+    background: #fff4e8;
+    border-left-color: var(--orange);
+  }
+
+  .pra-grading-warning strong {
+    color: var(--orange);
+  }
+
   @media (max-width: 850px) {
     .pra-spec-grid,
     .pra-summary,
@@ -477,6 +508,51 @@
     <h1>Kapitola 1: Značení vodičů, kabelů, přístrojů a svorek</h1>
     <p>Odborný výcvik – Jednoduché elektromontážní práce | 1. ročník</p>
   </header>
+
+
+  <section class="pra-section">
+    <div class="pra-container">
+      <h2>Kritéria hodnocení</h2>
+
+      <div class="pra-grading-grid">
+
+        <div class="pra-grading-card">
+          <strong>Krátké testy na probrané učivo</strong><br>
+          Váha známky: <strong>0,25</strong>
+        </div>
+
+        <div class="pra-grading-card">
+          <strong>Dobrovolná známka za aktivitu v hodině</strong><br>
+          Váha známky: <strong>0,25</strong>
+        </div>
+
+        <div class="pra-grading-card">
+          <strong>Jeden samostatný projekt</strong><br>
+          Projekt je ohodnocen <strong>dvěma známkami</strong>.
+        </div>
+
+        <div class="pra-grading-card">
+          <strong>Realizace projektu</strong><br>
+          Zapojení, program a prezentace.<br>
+          Váha známky: <strong>1,0</strong>
+        </div>
+
+        <div class="pra-grading-card">
+          <strong>Dokumentace projektu</strong><br>
+          Váha známky: <strong>1,0</strong>
+        </div>
+
+        <div class="pra-grading-card pra-grading-warning">
+          <strong>Podmínka úspěšného dokončení předmětu</strong><br>
+          Úspěšné odevzdání projektu je nezbytnou podmínkou pro úspěšné dokončení předmětu.
+          Neodevzdaný nebo neuznaný projekt či jeho dokumentace znamená známku
+          <strong>Nedostatečný</strong> za tuto část PRA a tím i na vysvědčení
+          <strong>(viz školní řád)</strong>.
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 <section class="pra-section alt">
   <div class="pra-container">
