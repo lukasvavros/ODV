@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapitola 1: Značení vodičů, kabelů, přístrojů a svorek</title>
+</head>
+<body>
+
 <style>
   .pra-chapter {
     --orange: #ee7203;
@@ -844,9 +853,63 @@
     }
   }
 
+
+
+  
+  /* ========================================================= */
+  /* ČESKÁ TYPOGRAFIE – ZAROVNÁNÍ DO BLOKU JAKO VE WORDU */
+  /* ========================================================= */
+
+  .pra-section p,
+  .pra-part,
+  .pra-led-card p,
+  .pra-led-pin,
+  .pra-led-note,
+  .pra-callout,
+  .pra-marking-box p,
+  .pra-marking-note,
+  .pra-ident-card-note,
+  .pra-ident-footnote,
+  .pra-summary-card span,
+  .pra-command-list li,
+  .pra-task-list li {
+    text-align: justify;
+    text-justify: inter-word;
+
+    /* Slova se nikdy automaticky nedělí. */
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+
+    word-break: normal;
+    overflow-wrap: normal;
+
+    letter-spacing: 0;
+    word-spacing: normal;
+  }
+
+  /* Prvky, které mají mít vlastní způsob zarovnání. */
+  .pra-gallery-caption {
+    text-align: center;
+    hyphens: none;
+  }
+
+  .pra-flow-box p {
+    text-align: center;
+    hyphens: none;
+  }
+
+  .pra-ident-table th,
+  .pra-ident-table td,
+  .pra-author-item {
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
 </style>
 
-<div class="pra-chapter">
+<div class="pra-chapter" lang="cs">
 
   <header class="pra-hero">
     <h1>Kapitola 1: Značení vodičů, kabelů, přístrojů a svorek</h1>
@@ -2269,42 +2332,145 @@ void loop() {
 
 
 <script>
-document.querySelectorAll('.pra-gallery').forEach(function(gallery) {
-  const slides = gallery.querySelectorAll('.pra-gallery-image');
-  const dots = gallery.querySelectorAll('.pra-gallery-dot');
-  const prev = gallery.querySelector('.pra-gallery-arrow.prev');
-  const next = gallery.querySelector('.pra-gallery-arrow.next');
-  let current = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-  function showSlide(index) {
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
+  /* ======================================================= */
+  /* GALERIE */
+  /* ======================================================= */
 
-    slides.forEach(function(slide) {
-      slide.classList.remove('active');
+  document.querySelectorAll('.pra-gallery').forEach(function(gallery) {
+    const slides = gallery.querySelectorAll('.pra-gallery-image');
+    const dots = gallery.querySelectorAll('.pra-gallery-dot');
+    const prev = gallery.querySelector('.pra-gallery-arrow.prev');
+    const next = gallery.querySelector('.pra-gallery-arrow.next');
+
+    let current = 0;
+
+    function showSlide(index) {
+      if (!slides.length) return;
+
+      if (index < 0) {
+        index = slides.length - 1;
+      }
+
+      if (index >= slides.length) {
+        index = 0;
+      }
+
+      slides.forEach(function(slide) {
+        slide.classList.remove('active');
+      });
+
+      dots.forEach(function(dot) {
+        dot.classList.remove('active');
+      });
+
+      slides[index].classList.add('active');
+
+      if (dots[index]) {
+        dots[index].classList.add('active');
+      }
+
+      current = index;
+    }
+
+    if (prev) {
+      prev.addEventListener('click', function() {
+        showSlide(current - 1);
+      });
+    }
+
+    if (next) {
+      next.addEventListener('click', function() {
+        showSlide(current + 1);
+      });
+    }
+
+    dots.forEach(function(dot, index) {
+      dot.addEventListener('click', function() {
+        showSlide(index);
+      });
     });
+  });
 
-    dots.forEach(function(dot) {
-      dot.classList.remove('active');
-    });
 
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-    current = index;
+  /* ======================================================= */
+  /* ČESKÁ TYPOGRAFIE */
+  /* ======================================================= */
+
+  const root = document.querySelector('.pra-chapter');
+
+  if (!root) {
+    return;
   }
 
-  prev.addEventListener('click', function() {
-    showSlide(current - 1);
+  const walker = document.createTreeWalker(
+    root,
+    NodeFilter.SHOW_TEXT
+  );
+
+  const textNodes = [];
+
+  while (walker.nextNode()) {
+    textNodes.push(walker.currentNode);
+  }
+
+  textNodes.forEach(function(node) {
+    const parent = node.parentElement;
+
+    if (!parent) {
+      return;
+    }
+
+    /*
+      Do programového kódu, SVG, stylů a dalších technických prvků
+      automaticky nezasahujeme.
+    */
+    if (
+      parent.closest(
+        'script, style, pre, code, svg, textarea'
+      )
+    ) {
+      return;
+    }
+
+    let value = node.nodeValue;
+
+    /*
+      Jednopísmenné české předložky a spojky:
+      a, i, k, o, s, u, v, z
+      Dostanou za sebe nezlomitelnou mezeru.
+    */
+    value = value.replace(
+      /(^|[\s(„"'])(([AaIiKkOoSsUuVvZz]))[ \t]+(?=\S)/g,
+      function(match, before, word) {
+        return before + word + '\u00A0';
+      }
+    );
+
+    /*
+      Číslo + běžná jednotka zůstane na jednom řádku.
+      Např. 30 mm, 450 V, 16 MHz, 32 KB.
+    */
+    value = value.replace(
+      /(\d)[ \t]+(?=(?:V|A|W|kW|mW|Hz|kHz|MHz|GHz|mm|cm|m|km|Ω|kΩ|MΩ|KB|MB|GB)\b)/g,
+      '$1\u00A0'
+    );
+
+    /*
+      Číslo + % zůstane pohromadě.
+    */
+    value = value.replace(
+      /(\d)[ \t]+%/g,
+      '$1\u00A0%'
+    );
+
+    node.nodeValue = value;
   });
 
-  next.addEventListener('click', function() {
-    showSlide(current + 1);
-  });
-
-  dots.forEach(function(dot, index) {
-    dot.addEventListener('click', function() {
-      showSlide(index);
-    });
-  });
 });
 </script>
+
+
+</body>
+</html>
