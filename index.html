@@ -85,82 +85,26 @@
     font-weight: 600;
   }
 
-  .arduino-general,
-  .arduino-project,
+  /* Kapitoly */
   .arduino-chapters {
     padding: clamp(28px, 4vw, 56px) clamp(18px, 5vw, 70px);
     border-left: 6px solid var(--orange);
     border-right: 6px solid var(--orange);
     border-top: 1px solid #eeeeee;
-  }
-
-  .arduino-general,
-  .arduino-chapters {
     background: var(--white);
   }
 
-  .arduino-project {
-    background: #fafafa;
-  }
-
-  .arduino-general-inner,
-  .arduino-project-inner,
   .arduino-chapters-inner {
     max-width: 1100px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .arduino-general h3,
-  .arduino-project h3,
   .arduino-chapters h3 {
     margin: 0 0 28px;
     color: var(--dark);
     font-size: clamp(22px, 2.4vw, 32px);
     font-weight: 400;
-  }
-
-  .arduino-link-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-
-  .arduino-project-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  .arduino-link-card {
-    display: block;
-    padding: 22px 18px;
-    border-radius: 14px;
-    background: var(--light);
-    color: var(--dark);
-    text-decoration: none;
-    border-top: 6px solid var(--orange);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .arduino-link-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
-  }
-
-  /* Stejný styl jako oranžové nadpisy v informačních bublinách */
-  .arduino-link-card strong {
-    display: block;
-    color: var(--orange);
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .arduino-link-card span {
-    display: block;
-    font-size: clamp(13px, 1.1vw, 15px);
-    line-height: 1.5;
   }
 
   .arduino-chapter-grid {
@@ -210,6 +154,7 @@
     font-weight: 600;
   }
 
+  /* Autor */
   .arduino-author {
     background: var(--light);
     padding: clamp(18px, 3vw, 28px);
@@ -255,13 +200,6 @@
     }
   }
 
-  @media (max-width: 800px) {
-    .arduino-link-list,
-    .arduino-project-list {
-      grid-template-columns: 1fr;
-    }
-  }
-
   @media (max-width: 600px) {
     .arduino-hero {
       box-shadow: none;
@@ -275,8 +213,6 @@
       text-align: left;
     }
 
-    .arduino-general,
-    .arduino-project,
     .arduino-chapters {
       border-left: none;
       border-right: none;
@@ -306,16 +242,17 @@
 
     <!-- Úvodní obrázek -->
     <div class="arduino-image-block">
-      <img class="img-responsive atto_image_button_middle img-fluid arduino-main-image"
-           src="picture/3.png"
-           alt="Arduino – úvodní obrázek"
-           loading="lazy"
-           decoding="async">
+      <img
+        class="img-responsive atto_image_button_middle img-fluid arduino-main-image"
+        src="picture/3.png"
+        alt="Arduino – úvodní obrázek"
+        loading="lazy"
+        decoding="async">
     </div>
 
     <!-- Nadpis -->
     <header class="arduino-title">
-      <h2>Odborný výcvík – Jednoduché elektromontážní práce </h2>
+      <h2>Odborný výcvik – Jednoduché elektromontážní práce</h2>
       <span>Výukové materiály pro 1. ročník</span>
     </header>
 
@@ -323,79 +260,12 @@
     <main class="arduino-info">
       <p>
         Tato stránka slouží k předmětu
-        <span class="arduino-highlight">odborného výcviku</span>, 
-        <span class="arduino-highlight">jednoduché elektromontážní práce</span>, vyučovaném v 1. ročníku
-        na Gymnáziu a Střední průmyslové škole elektrotechniky a informatiky
-        ve Frenštátě pod Radhoštěm.
+        <span class="arduino-highlight">odborného výcviku</span>,
+        <span class="arduino-highlight">jednoduché elektromontážní práce</span>,
+        vyučovaném v 1. ročníku na Gymnáziu a Střední průmyslové škole
+        elektrotechniky a informatiky ve Frenštátě pod Radhoštěm.
       </p>
     </main>
-
-    <!-- Obecné informace -->
-    <section class="arduino-general">
-      <div class="arduino-general-inner">
-
-        <h3>Obecné informace</h3>
-
-        <div class="arduino-link-list">
-
-          <a class="arduino-link-card"
-             href="hodnoceni-predmetu.html"
-             target="_blank"
-             rel="noopener noreferrer">
-            <strong>Hodnocení předmětu</strong>
-            <span>Pravidla hodnocení, požadavky a podmínky splnění předmětu.</span>
-          </a>
-
-          <a class="arduino-link-card"
-             href="dokumenty/Arduino_tahak.pdf"
-             target="_blank"
-             rel="noopener noreferrer"
-             type="application/pdf">
-            <strong>Tahák Arduino</strong>
-            <span>Arduino tahák vytvořený Tomášem Chovancem.</span>
-          </a>
-
-          <a class="arduino-link-card"
-             href="https://docs.arduino.cc/language-reference/"
-             target="_blank"
-             rel="noopener noreferrer">
-            <strong>Dokumentace Arduino</strong>
-            <span>Oficiální dokumentace k deskám, programování a knihovnám Arduino.</span>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Projekt -->
-    <section class="arduino-project">
-      <div class="arduino-project-inner">
-
-        <h3>Projekt</h3>
-
-        <div class="arduino-project-list">
-
-          <a class="arduino-link-card"
-             href="projekt-obecne-informace.html"
-             target="_blank"
-             rel="noopener noreferrer">
-            <strong>Obecné informace</strong>
-            <span>Základní informace k samostatnému projektu, zadání, termínům a odevzdání.</span>
-          </a>
-
-          <a class="arduino-link-card"
-             href="projekty-tridy-3ab.html"
-             target="_blank"
-             rel="noopener noreferrer">
-            <strong>Projekty třídy 3A/B</strong>
-            <span>Přehled projektů, rozdělení témat a informace pro třídy 3A/B.</span>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
 
     <!-- Kapitoly -->
     <section class="arduino-chapters">
@@ -405,16 +275,16 @@
 
         <div class="arduino-chapter-grid">
 
-          <a class="arduino-chapter-card"
-             href="kapitola1.1.html">
+          <a class="arduino-chapter-card" href="kapitola1.1.html">
             <span class="arduino-chapter-number">1</span>
             <span class="arduino-chapter-name">Úvod do Arduina</span>
           </a>
 
-          <a class="arduino-chapter-card" 
-            href="kapitola2.html">
+          <a class="arduino-chapter-card" href="kapitola2.html">
             <span class="arduino-chapter-number">2</span>
-            <span class="arduino-chapter-name">Digitální a analogový vstup Arduina</span>
+            <span class="arduino-chapter-name">
+              Digitální a analogový vstup Arduina
+            </span>
           </a>
 
           <a class="arduino-chapter-card" href="kapitola3.html">
@@ -478,7 +348,6 @@
           </a>
 
         </div>
-
       </div>
     </section>
 
@@ -487,21 +356,29 @@
       <div class="arduino-author-content">
 
         <span class="arduino-author-item">
-          <img class="image img-fluid"
-               src="picture/1.png"
-               alt=""
-               role="presentation"
-               style="width: 25px; height: 35px;">
-          <span>Vytvořil:&nbsp;<strong>Lukáš Vavroš</strong></span>
+          <img
+            class="image img-fluid"
+            src="picture/1.png"
+            alt=""
+            role="presentation"
+            style="width: 25px; height: 35px;">
+
+          <span>
+            Vytvořil:&nbsp;<strong>Lukáš Vavroš</strong>
+          </span>
         </span>
 
         <span class="arduino-author-item">
-          <img class="img-responsive atto_image_button_text-bottom img-fluid"
-               src="picture/2.png"
-               alt=""
-               role="presentation"
-               style="width: 35px; height: 20px;">
-          <span>E-mail:&nbsp;<strong>lukas.vavros@frengp.cz<strong></span>
+          <img
+            class="img-responsive atto_image_button_text-bottom img-fluid"
+            src="picture/2.png"
+            alt=""
+            role="presentation"
+            style="width: 35px; height: 20px;">
+
+          <span>
+            E-mail:&nbsp;<strong>lukas.vavros@frengp.cz</strong>
+          </span>
         </span>
 
       </div>
