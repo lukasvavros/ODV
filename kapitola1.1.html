@@ -993,6 +993,16 @@
     white-space: nowrap;
   }
 
+  .pra-harmonized-grid {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+
+  .pra-harmonized-grid .pra-ident-table th:first-child,
+  .pra-harmonized-grid .pra-ident-table td:first-child {
+    width: 150px;
+  }
+
   /* ========================================================= */
   /* ČESKÁ TYPOGRAFIE – ZAROVNÁNÍ DO BLOKU JAKO VE WORDU */
   /* ========================================================= */
@@ -2232,138 +2242,222 @@
       Označení čteme postupně zleva doprava. Jednotlivé znaky určují vlastnosti kabelu.
     </div>
 
-    <div class="pra-harmonized-table-wrap">
-      <table class="pra-harmonized-table">
-        <thead>
-          <tr>
-            <th>Pořadí</th>
-            <th>Označení</th>
-            <th>Význam</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="pra-marking-number">1. znak</td>
-            <td class="pra-harmonized-code">H<br>A</td>
-            <td>
-              <ul>
-                <li><strong>H</strong> – harmonizovaný typ</li>
-                <li><strong>A</strong> – uznávaný národní typ</li>
-              </ul>
-            </td>
-          </tr>
+    <div class="pra-ident-grid pra-harmonized-grid" aria-label="Přehled harmonizovaného značení ohebných kabelů a vodičů">
 
-          <tr>
-            <td class="pra-marking-number">2. znak</td>
-            <td class="pra-harmonized-code">01<br>03<br>05<br>07<br>1</td>
-            <td>
-              <ul>
-                <li><strong>01</strong> – 100/100 V</li>
-                <li><strong>03</strong> – 300/300 V</li>
-                <li><strong>05</strong> – 300/500 V</li>
-                <li><strong>07</strong> – 450/750 V</li>
-                <li><strong>1</strong> – 0,6/1 kV</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 1. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>1. znak – vztah k normám</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="center pra-ident-code">H</td>
+                <td>harmonizovaný typ</td>
+              </tr>
+              <tr>
+                <td class="center pra-ident-code">A</td>
+                <td>uznávaný národní typ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">3. znak</td>
-            <td class="pra-harmonized-code">V<br>R<br>S<br>X<br>Z<br>Z1</td>
-            <td>
-              <ul>
-                <li><strong>V</strong> – polyvinylchlorid (PVC)</li>
-                <li><strong>R</strong> – přírodní nebo syntetický kaučuk</li>
-                <li><strong>S</strong> – silikonový kaučuk</li>
-                <li><strong>X</strong> – sesítěný polyethylen</li>
-                <li><strong>Z</strong> – sesítěný FRNC polymer</li>
-                <li><strong>Z1</strong> – nesesítěný FRNC polymer</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 2. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>2. znak – jmenovité napětí</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">01</td><td>100/100 V</td></tr>
+              <tr><td class="center pra-ident-code">03</td><td>300/300 V</td></tr>
+              <tr><td class="center pra-ident-code">05</td><td>300/500 V</td></tr>
+              <tr><td class="center pra-ident-code">07</td><td>450/750 V</td></tr>
+              <tr><td class="center pra-ident-code">1</td><td>0,6/1 kV</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">4. znak</td>
-            <td class="pra-harmonized-code">V<br>R<br>N<br>N2<br>J<br>T<br>T2</td>
-            <td>
-              <ul>
-                <li><strong>V</strong> – polyvinylchlorid (PVC)</li>
-                <li><strong>R</strong> – přírodní nebo syntetický kaučuk</li>
-                <li><strong>N</strong> – chloropren-kaučuk</li>
-                <li><strong>N2</strong> – chloropren-kaučuk (speciální směs)</li>
-                <li><strong>J</strong> – opletení skleněným vláknem</li>
-                <li><strong>T</strong> – opletení textilií</li>
-                <li><strong>T2</strong> – opletení textilií</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 3. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>3. znak – izolační materiál</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">V</td><td>polyvinylchlorid (PVC)</td></tr>
+              <tr><td class="center pra-ident-code">R</td><td>přírodní nebo syntetický kaučuk</td></tr>
+              <tr><td class="center pra-ident-code">S</td><td>silikonový kaučuk</td></tr>
+              <tr><td class="center pra-ident-code">X</td><td>sesítěný polyethylen</td></tr>
+              <tr><td class="center pra-ident-code">Z</td><td>sesítěný FRNC polymer</td></tr>
+              <tr><td class="center pra-ident-code">Z1</td><td>nesesítěný FRNC polymer</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">5. znak</td>
-            <td class="pra-harmonized-code">H<br>H2</td>
-            <td>
-              <ul>
-                <li><strong>H</strong> – plochý a rozdělitelný</li>
-                <li><strong>H2</strong> – plochý a nerozdělitelný</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 4. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>4. znak – plášťový materiál</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">V</td><td>polyvinylchlorid (PVC)</td></tr>
+              <tr><td class="center pra-ident-code">R</td><td>přírodní nebo syntetický kaučuk</td></tr>
+              <tr><td class="center pra-ident-code">N</td><td>chloropren-kaučuk</td></tr>
+              <tr><td class="center pra-ident-code">N2</td><td>chloropren-kaučuk (speciální směs)</td></tr>
+              <tr><td class="center pra-ident-code">J</td><td>opletení skleněným vláknem</td></tr>
+              <tr><td class="center pra-ident-code">T</td><td>opletení textilií</td></tr>
+              <tr><td class="center pra-ident-code">T2</td><td>opletení textilií</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">6. znak</td>
-            <td class="pra-harmonized-code">bez symbolu<br>-A</td>
-            <td>
-              <ul>
-                <li><strong>bez symbolu</strong> – měď</li>
-                <li><strong>-A</strong> – hliník</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 5. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>5. znak – zvláštnost ve struktuře</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">H</td><td>plochý a rozdělitelný</td></tr>
+              <tr><td class="center pra-ident-code">H2</td><td>plochý a nerozdělitelný</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">7. znak</td>
-            <td class="pra-harmonized-code">-U<br>-R<br>-K<br>-F<br>-Y<br>-S<br>-W</td>
-            <td>
-              <ul>
-                <li><strong>-U</strong> – kulaté jednodrátové</li>
-                <li><strong>-R</strong> – kulaté vícedrátové</li>
-                <li><strong>-K</strong> – jádro z jemných drátů (pro pevné uložení)</li>
-                <li><strong>-F</strong> – jádro z jemných drátů (pro pohyblivé uložení)</li>
-                <li><strong>-Y</strong> – jádro z plochých drátů</li>
-                <li><strong>-S</strong> – sektorové vícedrátové</li>
-                <li><strong>-W</strong> – sektorové jednodrátové</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 6. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>6. znak – materiál jádra</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">bez symbolu</td><td>měď</td></tr>
+              <tr><td class="center pra-ident-code">-A</td><td>hliník</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">8. znak</td>
-            <td class="pra-harmonized-code">číslo</td>
-            <td>
-              Počet žil kabelu.
-            </td>
-          </tr>
+      <!-- 7. ZNAK -->
+      <div class="pra-ident-card wide">
+        <h3>7. znak – druh jádra</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">-U</td><td>kulaté jednodrátové</td></tr>
+              <tr><td class="center pra-ident-code">-R</td><td>kulaté vícedrátové</td></tr>
+              <tr><td class="center pra-ident-code">-K</td><td>jádro z jemných drátů (pro pevné uložení)</td></tr>
+              <tr><td class="center pra-ident-code">-F</td><td>jádro z jemných drátů (pro pohyblivé uložení)</td></tr>
+              <tr><td class="center pra-ident-code">-Y</td><td>jádro z plochých drátů</td></tr>
+              <tr><td class="center pra-ident-code">-S</td><td>sektorové vícedrátové</td></tr>
+              <tr><td class="center pra-ident-code">-W</td><td>sektorové jednodrátové</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">9. znak</td>
-            <td class="pra-harmonized-code">X<br>G</td>
-            <td>
-              <ul>
-                <li><strong>X</strong> – bez ochranného vodiče</li>
-                <li><strong>G</strong> – s ochranným vodičem</li>
-              </ul>
-            </td>
-          </tr>
+      <!-- 8. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>8. znak – počet žil</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">číslo</td><td>počet žil kabelu</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-          <tr>
-            <td class="pra-marking-number">10. znak</td>
-            <td class="pra-harmonized-code">např.<br>0,5<br>1<br>1,5<br>2,5</td>
-            <td>
-              Průřez jádra vodiče v <strong>mm²</strong>.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- 9. ZNAK -->
+      <div class="pra-ident-card">
+        <h3>9. znak – ochranný vodič</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">X</td><td>bez ochranného vodiče</td></tr>
+              <tr><td class="center pra-ident-code">G</td><td>s ochranným vodičem</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 10. ZNAK -->
+      <div class="pra-ident-card wide">
+        <h3>10. znak – průřez jádra vodiče</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr>
+                <th class="center">Označení</th>
+                <th>Význam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="center pra-ident-code">např. 0,5 &nbsp; 1 &nbsp; 1,5 &nbsp; 2,5</td>
+                <td>průřez jádra vodiče v <strong>mm²</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
     <div class="pra-marking-box">
