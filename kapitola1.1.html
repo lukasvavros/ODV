@@ -2497,50 +2497,294 @@
 </section>
 
 <section class="pra-section alt">
-    <div class="pra-container">
-      <h2>Princip fungování embedded systémů</h2>
+  <div class="pra-container">
+    <h2>Značení silových kabelů a vodičů</h2>
 
-      <p>
-        Slovo <strong>embedded</strong> označuje systém, který je součástí určitého zařízení.
-        Mikrokontrolér v ledničce, automobilu nebo robotu vykonává konkrétní úkol podle
-        programu, který je v něm uložen.
-      </p>
+    <p>
+      U silových kabelů a vodičů se používá <strong>zažitý způsob značení</strong>, ve kterém
+      jednotlivá písmena a číslice postupně popisují materiál vodiče, izolaci, konstrukci kabelu,
+      barevné provedení žil, počet žil, průřez a provedení jádra.
+    </p>
 
-      <div class="pra-embedded-image">
-        <img src="picture/6.png"
-             alt="Princip fungování embedded systému s Arduinem – vstupy, programová logika a výstupy"
-             loading="lazy"
-             decoding="async">
+    <div class="pra-callout">
+      <strong>Důležité:</strong><br>
+      Tato část popisuje zažitý způsob značení silových kabelů a vodičů.
+      Harmonizované značení <strong>ohebných kabelů a vodičů</strong> je vysvětleno v předchozí části.
+    </div>
+
+    <div class="pra-cable-marking-image">
+      <svg viewBox="0 0 1200 800"
+           style="display:block;width:80%;max-width:960px;height:auto;margin:0 auto;"
+           xmlns="http://www.w3.org/2000/svg"
+           role="img"
+           aria-labelledby="powerCableTitle powerCableDesc">
+        <title id="powerCableTitle">Rozklad označení CYKY-J 3×2,5 RE</title>
+        <desc id="powerCableDesc">Osm vodicích čar ukazuje význam jednotlivých částí označení silového kabelu CYKY-J 3×2,5 RE.</desc>
+
+        <rect width="1200" height="800" fill="#ffffff"/>
+
+        <!-- Vodicí čáry přímo nad jednotlivými znaky a skupinami znaků -->
+        <g fill="none" stroke="#a71924" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M53 660 V42 H700"/>
+          <path d="M109 660 V122 H700"/>
+          <path d="M165 660 V202 H700"/>
+          <path d="M221 660 V282 H700"/>
+          <path d="M300 660 V362 H700"/>
+          <path d="M389 660 V442 H700"/>
+          <path d="M548 660 V522 H700"/>
+          <path d="M692 660 V602 H700"/>
+        </g>
+
+        <g fill="#d20f25">
+          <circle cx="700" cy="42" r="8"/>
+          <circle cx="700" cy="122" r="8"/>
+          <circle cx="700" cy="202" r="8"/>
+          <circle cx="700" cy="282" r="8"/>
+          <circle cx="700" cy="362" r="8"/>
+          <circle cx="700" cy="442" r="8"/>
+          <circle cx="700" cy="522" r="8"/>
+          <circle cx="700" cy="602" r="8"/>
+        </g>
+
+        <g font-family="Verdana, Arial, Helvetica, sans-serif" fill="#252525">
+          <g transform="translate(744,32)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">1. znak</tspan><tspan> – materiál vodiče</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">C</tspan><tspan> = měď</tspan></text>
+          </g>
+          <g transform="translate(744,112)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">2. znak</tspan><tspan> – materiál izolace žil</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">Y</tspan><tspan> = měkčené PVC</tspan></text>
+          </g>
+          <g transform="translate(744,192)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">3. znak</tspan><tspan> – typ provedení kabelu</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">K</tspan><tspan> = kulatý kabel pro pevné uložení</tspan></text>
+          </g>
+          <g transform="translate(744,272)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">4. znak</tspan><tspan> – materiál izolace kabelu</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">Y</tspan><tspan> = měkčené PVC</tspan></text>
+          </g>
+          <g transform="translate(744,352)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">5. znak</tspan><tspan> – barevné provedení žil</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">-J</tspan><tspan> = se zelenožlutým vodičem</tspan></text>
+          </g>
+          <g transform="translate(744,432)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">6. znak</tspan><tspan> – počet žil</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">3</tspan><tspan> = tři žíly</tspan></text>
+          </g>
+          <g transform="translate(744,512)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">7. znak</tspan><tspan> – průřez každého vodiče</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">2,5</tspan><tspan> = 2,5 mm²</tspan></text>
+          </g>
+          <g transform="translate(744,592)">
+            <text x="0" y="0" font-size="20"><tspan font-weight="700">8. znak</tspan><tspan> – provedení jádra</tspan></text>
+            <text x="0" y="25" font-size="16" fill="#5a5a5a"><tspan font-weight="700">RE</tspan><tspan> = kruhový jednodrátový</tspan></text>
+          </g>
+        </g>
+
+        <!-- Označení je rozdělené na významové části kvůli přesnému zarovnání vodicích čar. -->
+        <g font-family="Consolas, 'Courier New', monospace" font-size="78" font-weight="700" fill="#050505">
+          <text x="30" y="754">C</text>
+          <text x="86" y="754">Y</text>
+          <text x="142" y="754">K</text>
+          <text x="198" y="754">Y</text>
+          <text x="254" y="754">-J</text>
+          <text x="366" y="754">3</text>
+          <text x="422" y="754">×</text>
+          <text x="478" y="754">2,5</text>
+          <text x="646" y="754">RE</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="pra-marking-example">
+      <strong>Příklad značení:</strong><br>
+      <span class="cable-code">CYKY-J 3×2,5 RE</span><br>
+      Označení se čte zleva doprava. Každá část kódu popisuje jinou vlastnost kabelu.
+    </div>
+
+    <div class="pra-ident-grid" aria-label="Přehled značení silových kabelů a vodičů">
+
+      <div class="pra-ident-card">
+        <h3>1. znak – materiál vodiče</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Popis</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">C</td><td>měď</td></tr>
+              <tr><td class="center pra-ident-code">A</td><td>hliník</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="pra-flow">
-        <div class="pra-flow-box">
-          <h4>Vstupy</h4>
-          <p>Senzory, tlačítka, komunikace a naměřené hodnoty.</p>
-        </div>
-
-        <div class="pra-flow-arrow">→</div>
-
-        <div class="pra-flow-box">
-          <h4>Programová logika</h4>
-          <p>Arduino čte vstupy, vyhodnocuje podmínky a rozhoduje.</p>
-        </div>
-
-        <div class="pra-flow-arrow">→</div>
-
-        <div class="pra-flow-box">
-          <h4>Výstupy</h4>
-          <p>LED, displej, motor, relé, bzučák nebo jiné zařízení.</p>
+      <div class="pra-ident-card">
+        <h3>2./4. znak – materiál izolace žil / kabelu</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Materiál</th><th>Popis</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">Y</td><td>měkčené PVC</td><td>standardní provedení izolace</td></tr>
+              <tr><td class="center pra-ident-code">G</td><td>kaučuk (pryž – „guma“)</td><td>zvýšená ohebnost a odolnost proti vnějším vlivům, například olejům</td></tr>
+              <tr><td class="center pra-ident-code">S</td><td>silikonový kaučuk</td><td>vyšší teplotní odolnost, orientačně do 180 °C</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <div class="pra-callout">
-        <strong>Otázka k zamyšlení:</strong>
-        Vyberte si zařízení kolem sebe a zkuste určit jeho vstupy, programovou logiku
-        a výstupy.
+      <div class="pra-ident-card wide">
+        <h3>3. znak – typ provedení kabelu nebo vodiče</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Popis</th><th>Příklad použití</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">A</td><td>ohebný flexibilní vodič</td><td>prodrátování rozváděčů</td></tr>
+              <tr><td class="center pra-ident-code">Y</td><td>vodič s dvojitou PVC izolací</td><td>prostory s požadavkem na zvýšenou mechanickou ochranu vodiče</td></tr>
+              <tr><td class="center pra-ident-code">H</td><td>plochý kabel s ohebným jádrem (oddělitelné žíly)</td><td>pohyblivé přívody k malým spotřebičům</td></tr>
+              <tr><td class="center pra-ident-code">K</td><td>kulatý kabel s pevným kulatým jádrem pro pevné uložení</td><td>rozvody pro uložení pod omítkou, do lišt</td></tr>
+              <tr><td class="center pra-ident-code">L</td><td>kabel s ohebným jádrem pro lehká mechanická namáhání</td><td>pohyblivé přívody k malým spotřebičům</td></tr>
+              <tr><td class="center pra-ident-code">S</td><td>kabel s ohebným jádrem pro střední mechanické namáhání</td><td>prodlužovací a pohyblivé přívody</td></tr>
+              <tr><td class="center pra-ident-code">T</td><td>kabel s ohebným jádrem pro těžká mechanická namáhání</td><td>prodlužovací přívody, průmysl (odolné proti olejům)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pra-ident-card">
+        <h3>5. znak – barevné provedení žil v kabelu</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Popis</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">-J</td><td>kabel se zelenožlutým vodičem</td></tr>
+              <tr><td class="center pra-ident-code">-O</td><td>kabel bez zelenožlutého vodiče</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pra-ident-card">
+        <h3>6. znak – počet žil v kabelu</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Význam</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">číslo</td><td>udává počet žil v kabelu, například <strong>3</strong> = tři žíly</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pra-ident-card wide">
+        <h3>Barevné provedení žil podle počtu žil</h3>
+        <p class="pra-ident-card-note">Přehled barevného provedení žil podle ČSN 33 0166 ed. 2.</p>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead>
+              <tr><th class="center">Počet žil</th><th>Se zelenožlutým vodičem</th><th>Bez zelenožlutého vodiče</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="center pra-ident-code">2</td>
+                <td class="center pra-ident-muted">—</td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-bu" title="modrá"></span><span class="pra-color-dot pra-c-bn" title="hnědá"></span></span></td>
+              </tr>
+              <tr>
+                <td class="center pra-ident-code">3</td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-gnye" title="zelenožlutá"></span><span class="pra-color-dot pra-c-bu" title="modrá"></span><span class="pra-color-dot pra-c-bn" title="hnědá"></span></span></td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-bn" title="hnědá"></span><span class="pra-color-dot pra-c-bk" title="černá"></span><span class="pra-color-dot pra-c-gy" title="šedá"></span></span></td>
+              </tr>
+              <tr>
+                <td class="center pra-ident-code">4</td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-gnye" title="zelenožlutá"></span><span class="pra-color-dot pra-c-bu" title="modrá"></span><span class="pra-color-dot pra-c-bn" title="hnědá"></span><span class="pra-color-dot pra-c-bk" title="černá"></span></span></td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-bu" title="modrá"></span><span class="pra-color-dot pra-c-bn" title="hnědá"></span><span class="pra-color-dot pra-c-bk" title="černá"></span><span class="pra-color-dot pra-c-gy" title="šedá"></span></span></td>
+              </tr>
+              <tr>
+                <td class="center pra-ident-code">5</td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-gnye" title="zelenožlutá"></span><span class="pra-color-dot pra-c-bu" title="modrá"></span><span class="pra-color-dot pra-c-bn" title="hnědá"></span><span class="pra-color-dot pra-c-bk" title="černá"></span><span class="pra-color-dot pra-c-gy" title="šedá"></span></span></td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-bu" title="modrá"></span><span class="pra-color-dot pra-c-bn" title="hnědá"></span><span class="pra-color-dot pra-c-bk" title="černá"></span><span class="pra-color-dot pra-c-gy" title="šedá"></span><span class="pra-color-dot pra-c-bk" title="černá"></span></span></td>
+              </tr>
+              <tr>
+                <td class="center pra-ident-code">6 a více</td>
+                <td><span class="pra-color-set"><span class="pra-color-dot pra-c-gnye" title="zelenožlutá"></span><span class="pra-color-item"><span class="pra-color-dot pra-c-bk"></span>číslované žíly</span></span></td>
+                <td><span class="pra-color-set"><span class="pra-color-item"><span class="pra-color-dot pra-c-bk"></span>číslované žíly</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pra-ident-card">
+        <h3>7. znak – průřez každého vodiče v kabelu</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Význam</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">např. 1,5 &nbsp; 2,5 &nbsp; 4</td><td>průřez každého jednotlivého vodiče v <strong>mm²</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pra-ident-card wide">
+        <h3>8. znak – jádra silových vodičů</h3>
+        <div class="pra-ident-scroll">
+          <table class="pra-ident-table">
+            <thead><tr><th class="center">Označení</th><th>Název</th><th>Popis</th></tr></thead>
+            <tbody>
+              <tr><td class="center pra-ident-code">RE</td><td>kruhový jednodrátový</td><td>Pro malé a střední průřezy, měděné do 16 mm² a hliníkové do 35 mm². Používá se u kabelů a vodičů pro pevné uložení.</td></tr>
+              <tr><td class="center pra-ident-code">„licna“</td><td>jemně / velmi jemně drátkovaný</td><td>Ohebné jádro z holé nebo pocínované mědi. Používá se u kabelů a vodičů pro pohyblivé uložení.</td></tr>
+              <tr><td class="center pra-ident-code">RM</td><td>kruhový mnohodrátový nekomprimovaný</td><td>Pro střední a velké průřezy, měděné od 6 mm² a hliníkové od 25 mm². Používá se pouze výjimečně u kabelů a vodičů pro pevné uložení.</td></tr>
+              <tr><td class="center pra-ident-code">RM</td><td>kruhový mnohodrátový komprimovaný</td><td>Pro kompaktní vodiče středních a velkých průřezů, měděné od 6 mm² a hliníkové od 16 mm². Používá se u kabelů a vodičů pro pevné uložení.</td></tr>
+              <tr><td class="center pra-ident-code">SE</td><td>sektorový jednodrátový</td><td>Pro střední a velké průřezy z hliníku od 50 mm² do 240 mm². Používá se pro 3-, 3½-, 4 nebo 5žilové kabely pro pevné uložení.</td></tr>
+              <tr><td class="center pra-ident-code">SM</td><td>sektorový mnohodrátový</td><td>Pro střední a velké průřezy z hliníku od 35 mm² do 300 mm². Používá se pro 3-, 3½-, 4 nebo 5žilové kabely pro pevné uložení.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pra-marking-box">
+      <h4>Jak číst označení CYKY-J 3×2,5 RE</h4>
+
+      <div class="example-row">
+        <strong>CYKY</strong><br>
+        C – měděný vodič<br>
+        Y – izolace žil z měkčeného PVC<br>
+        K – kulatý kabel s pevným kulatým jádrem pro pevné uložení<br>
+        Y – izolace kabelu z měkčeného PVC
+      </div>
+
+      <div class="example-row">
+        <strong>-J 3×2,5</strong><br>
+        -J – kabel se zelenožlutým vodičem<br>
+        3 – počet žil v kabelu<br>
+        2,5 – průřez každého vodiče 2,5 mm²
+      </div>
+
+      <div class="example-row">
+        <strong>RE</strong><br>
+        Kruhové jednodrátové jádro určené pro pevné uložení.
       </div>
     </div>
-  </section>
+
+    <div class="pra-marking-box">
+      <h4>Doplňkové označení typu vodičů</h4>
+      <div class="example-row">
+        <strong>CYKYLo</strong><br>
+        Plochý kabel s pevným kulatým jádrem pro pevné uložení.
+        Používá se v prostorech s malou instalační hloubkou pro kabely, například v betonovém stropu.
+      </div>
+    </div>
+
+    <div class="pra-callout">
+      <strong>Zapamatujte si:</strong><br>
+      U označení silového kabelu sledujeme postupně <strong>materiál vodiče</strong>,
+      <strong>materiál izolace</strong>, <strong>typ provedení</strong>, <strong>barevné provedení žil</strong>,
+      <strong>počet žil</strong>, <strong>průřez</strong> a <strong>provedení jádra</strong>.
+    </div>
+  </div>
+</section>
 
   <section class="pra-section">
     <div class="pra-container">
