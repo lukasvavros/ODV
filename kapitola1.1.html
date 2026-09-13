@@ -3040,17 +3040,17 @@
           </tr>
           <tr>
             <td>Cívka stykače/relé</td>
-            <td class="pra-harmonized-code">-</td>
+            <td class="pra-harmonized-code">KM / KA</td>
             <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 320" width="155" height="320" style="display:block;max-width:100%;height:auto;margin:0 auto;background:white" role="img" aria-label="Cívka stykače nebo relé se svorkami A1 a A2"><title>Cívka stykače/relé – svorky A1 a A2</title><g fill="none" stroke="black" stroke-width="1.2" stroke-linejoin="miter"><path d="M75 22V129 M2 129H145V201H2Z M75 201V309"/></g><g fill="black" font-family="Verdana, Arial, sans-serif" font-size="44"><text x="90" y="75">A1</text><text x="90" y="289">A2</text></g></svg></td>
           </tr>
           <tr>
             <td>Cívka se zpožděným rozběhem</td>
-            <td class="pra-harmonized-code">-</td>
+            <td class="pra-harmonized-code">KT</td>
             <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 239" width="168" height="239" style="display:block;max-width:100%;height:auto;margin:0 auto;background:white" role="img" aria-label="KT – cívka se zpožděným rozběhem, svorky A1 a A2"><title>Cívka se zpožděným rozběhem – svorky A1 a A2</title><g fill="none" stroke="black" stroke-width="1.2" stroke-linejoin="miter"><path d="M84 18V94 M33 94H135V147H33Z M84 147V222 M33 94L59 147 M59 94L33 147"/></g><g fill="black" font-family="Verdana, Arial, sans-serif" font-size="30"><text x="97" y="56">A1</text><text x="97" y="210">A2</text></g></svg></td>
           </tr>
           <tr>
             <td>Cívka se zpožděným odtahem</td>
-            <td class="pra-harmonized-code">-</td>
+            <td class="pra-harmonized-code">KT</td>
             <td><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 255" width="125" height="255" style="display:block;max-width:100%;height:auto;margin:0 auto;background:white" role="img" aria-label="KT – cívka se zpožděným odtahem, svorky A1 a A2"><title>Cívka se zpožděným odtahem – svorky A1 a A2</title><g fill="none" stroke="black" stroke-width="1.2" stroke-linejoin="miter"><path d="M62 19V95 M11 95H113V148H11Z M62 148V238"/></g><rect x="11" y="95" width="26" height="53" fill="black"/><g fill="black" font-family="Verdana, Arial, sans-serif" font-size="30"><text x="75" y="57">A1</text><text x="75" y="211">A2</text></g></svg></td>
           </tr>
           <tr>
@@ -3107,6 +3107,79 @@
       <strong>Příklad:</strong><br>
       Označení <strong>KM1</strong> znamená první stykač ve schématu, zatímco
       <strong>FU2</strong> označuje druhou pojistku.
+    </div>
+  </div>
+</section>
+
+<section class="pra-section">
+  <div class="pra-container">
+    <h2>Pomocné kontakty stykačů a relé</h2>
+
+    <p>
+      <strong>Pomocné kontakty</strong> jsou součástí řídicích a signalizačních obvodů.
+      Na rozdíl od hlavních kontaktů obvykle nespínají výkonový obvod spotřebiče,
+      ale slouží například k samodržení stykače, blokování jiného přístroje,
+      signalizaci provozního stavu nebo předávání informace do další části řízení.
+    </p>
+
+    <p>
+      Svorky pomocných kontaktů se označují <strong>dvoumístným číslem</strong>.
+      První číslice určuje pořadí kontaktu v přístroji a druhá číslice vyjadřuje
+      jeho funkci. Díky tomu lze již z označení svorek poznat, zda jde o kontakt
+      rozpínací, spínací nebo přepínací.
+    </p>
+
+    <div class="pra-harmonized-table-wrap">
+      <table class="pra-harmonized-table" aria-label="Číslování pomocných kontaktů stykačů a relé">
+        <thead>
+          <tr>
+            <th>Typ pomocného kontaktu</th>
+            <th>Funkční číslice</th>
+            <th>Příklady označení svorek</th>
+            <th>Funkce v klidovém stavu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rozpínací kontakt (NC)</strong></td>
+            <td class="pra-harmonized-code">1–2</td>
+            <td class="pra-harmonized-code">11–12, 21–22</td>
+            <td>Kontakt je sepnutý a po přitažení cívky se rozpojí.</td>
+          </tr>
+          <tr>
+            <td><strong>Spínací kontakt (NO)</strong></td>
+            <td class="pra-harmonized-code">3–4</td>
+            <td class="pra-harmonized-code">13–14, 23–24</td>
+            <td>Kontakt je rozepnutý a po přitažení cívky se sepne.</td>
+          </tr>
+          <tr>
+            <td><strong>Přepínací kontakt</strong></td>
+            <td class="pra-harmonized-code">1–2–4</td>
+            <td class="pra-harmonized-code">31–32–34</td>
+            <td>Společná svorka se přepne z rozpínacího na spínací kontakt.</td>
+          </tr>
+          <tr>
+            <td><strong>Kontakt se zvláštní funkcí</strong></td>
+            <td class="pra-harmonized-code">5–6 / 7–8</td>
+            <td class="pra-harmonized-code">15–16, 17–18</td>
+            <td>Vyhrazené číslování například pro časově zpožděné kontakty.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pra-callout">
+      <strong>Jak číst označení:</strong><br>
+      U kontaktu <strong>13–14</strong> číslice <strong>1</strong> označuje první
+      pomocný kontakt a číslice <strong>3–4</strong> určují spínací funkci.
+      Kontakt <strong>21–22</strong> je druhý pomocný kontakt a podle číslic
+      <strong>1–2</strong> jde o kontakt rozpínací.
+    </div>
+
+    <div class="pra-callout">
+      <strong>Zapamatujte si:</strong><br>
+      <strong>NC</strong> znamená kontakt v klidu sepnutý, který se po ovládání rozpojí.
+      <strong>NO</strong> znamená kontakt v klidu rozepnutý, který se po ovládání sepne.
     </div>
   </div>
 </section>
