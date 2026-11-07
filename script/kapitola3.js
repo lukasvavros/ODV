@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  function stop(){if(timer!==null)clearInterval(timer);timer=null;play.textContent='▶ Přehrát';}
  function render(){
   lab.dataset.mode=mode;lab.dataset.step=String(step);const [t,d,s,active]=steps[mode][step];title.textContent=t;description.textContent=d;status.textContent=s;tag.textContent=`KROK ${step+1} Z 5`;focus.textContent=active.map(n=>`${n} · ${partInfo[n][0]}`).join(' · ');
-  const isTrip=step>=3;dot.classList.toggle('is-open',isTrip);svgState.textContent=isTrip?'Kontakty rozpojeny · jistič vybaven':'Kontakty sepnuty · obvod pod proudem';
+  const isTrip=step>=3;dot.classList.toggle('is-open',isTrip);svgState.textContent=isTrip?(step===3?'Kontakty se rozpojily · probíhá zhášení oblouku':'Kontakty rozpojeny · jistič vybaven'):'Kontakty sepnuty · obvod pod proudem';
   svg.classList.toggle('is-tripped',isTrip);svg.classList.toggle('is-arcing',step===3);
   svg.classList.toggle('is-overheated',mode==='overload'&&step>=1);svg.classList.toggle('is-magnetic',mode==='short'&&step>=2);svg.classList.toggle('is-unlatched',step>=2);
   svg.querySelectorAll('.odv-part').forEach(n=>n.classList.toggle('is-active',active.includes(Number(n.dataset.part))));
