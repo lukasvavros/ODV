@@ -2363,3 +2363,96 @@ html[data-theme=dark] .vycvik-chapter .odv-appliance-card figcaption strong {col
   .vycvik-chapter .odv-appliance-image {height:132px;padding:7px}
   .vycvik-chapter .odv-appliance-card figcaption {padding:9px 6px 10px;min-height:74px}
 }
+
+/* SVG studijní ikony – jednotný vzhled s kapitolami Arduino */
+.vycvik-chapter .odv-svg-icon{display:inline-flex;flex:0 0 66px;width:66px;height:66px;align-items:center;justify-content:center;overflow:visible}
+.vycvik-chapter .odv-svg-icon img{display:block;object-fit:contain;width:100%;height:100%}
+.vycvik-chapter .odv-svg-icon .odv-svg-dark{display:none}
+html[data-theme="dark"] .vycvik-chapter .odv-svg-icon .odv-svg-light{display:none}
+html[data-theme="dark"] .vycvik-chapter .odv-svg-icon .odv-svg-dark{display:block}
+.vycvik-chapter .odv-section-icon-title{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.vycvik-chapter .odv-section-icon-title h2{margin:0;flex:1;min-width:0}
+.vycvik-chapter .odv-study-heading .odv-svg-icon{flex-basis:64px;width:64px;height:64px}
+@media(max-width:540px){.vycvik-chapter .odv-svg-icon{flex-basis:52px;width:52px;height:52px}.vycvik-chapter .odv-study-heading .odv-svg-icon{flex-basis:52px;width:52px;height:52px}.vycvik-chapter .odv-section-icon-title{gap:11px}}
+
+
+/* === KAPITOLA 3: INTERAKTIVNI PRINCIP JISTICE === */
+.vycvik-chapter .odv-breaker-lab{--lab-border:#cbdfe2;--lab-card:#f1f8f8;--lab-text:#1a353c;--lab-muted:#54747b;--lab-accent:#008d92;--lab-focus:#d6f3ee;margin:25px 0 32px;border:1px solid var(--lab-border);border-radius:24px;background:var(--lab-card);padding:clamp(14px,2.6vw,26px);color:var(--lab-text);box-shadow:0 14px 35px #002b3010}
+html[data-theme="dark"] .vycvik-chapter .odv-breaker-lab{--lab-border:#39585b;--lab-card:#152c30;--lab-text:#e5f4f2;--lab-muted:#abc5c6;--lab-accent:#67e5dc;--lab-focus:#1f4748;box-shadow:none}
+.vycvik-chapter .odv-lab-header{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.vycvik-chapter .odv-lab-header h3{margin:5px 0 6px;font-size:clamp(21px,2.1vw,29px);color:var(--lab-text)}
+.vycvik-chapter .odv-lab-header p{margin:0;color:var(--lab-muted);font-size:14px;line-height:1.5}
+.vycvik-chapter .odv-lab-eyebrow{font-weight:800;letter-spacing:.1em;color:var(--lab-accent);font-size:11px}
+.vycvik-chapter .odv-lab-number{font-size:32px;font-weight:900;white-space:nowrap;color:var(--lab-accent);opacity:.35}
+.vycvik-chapter .odv-lab-modes{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 15px}
+.vycvik-chapter .odv-lab-modes button,.vycvik-chapter .odv-lab-controls button,.vycvik-chapter .odv-component-buttons button{font:inherit;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;color:var(--lab-text);border:1px solid var(--lab-border);border-radius:11px;background:transparent;padding:10px 15px;font-weight:700}
+.vycvik-chapter .odv-lab-modes button:hover,.vycvik-chapter .odv-lab-controls button:hover,.vycvik-chapter .odv-component-buttons button:hover{border-color:var(--lab-accent);transform:translateY(-1px)}
+.vycvik-chapter .odv-lab-modes button.is-active,.vycvik-chapter .odv-lab-controls .odv-primary{background:#087e80;border-color:#087e80;color:white}
+.vycvik-chapter .odv-lab-stage{display:grid;grid-template-columns:minmax(0,1.56fr) minmax(255px,.86fr);gap:14px;align-items:stretch}
+.vycvik-chapter .odv-lab-visual{min-width:0;background:#fff;border:1px solid #d9e5e5;border-radius:16px;overflow:hidden;padding:4px 4px 8px}
+.vycvik-chapter #odv-breaker-svg{display:block;width:100%;height:auto;max-height:560px}
+.vycvik-chapter .odv-svg-hint{color:#6d8288;font-size:11px;text-align:center;padding:0 8px}
+.vycvik-chapter .odv-lab-details{padding:clamp(14px,2vw,24px);background:var(--lab-focus);border-radius:16px;display:flex;flex-direction:column;min-width:0}
+.vycvik-chapter .odv-lab-step-tag{font-size:11px;font-weight:850;letter-spacing:.12em;color:var(--lab-accent)}
+.vycvik-chapter .odv-lab-details h4{font-size:clamp(19px,1.8vw,25px);color:var(--lab-text);margin:9px 0 12px}
+.vycvik-chapter .odv-lab-details>p{font-size:14px;line-height:1.65;color:var(--lab-text);margin:0 0 14px}
+.vycvik-chapter .odv-lab-status{display:flex;gap:9px;align-items:center;font-weight:750;font-size:13px;padding:11px 12px;border:1px solid var(--lab-border);border-radius:10px;margin-top:auto}
+.vycvik-chapter .odv-lab-status-dot{width:11px;height:11px;flex:0 0 11px;border-radius:99px;background:#16a663}
+.vycvik-chapter .odv-lab-status-dot.is-open{background:#e07946}
+.vycvik-chapter .odv-lab-focus{font-size:12px;line-height:1.5;margin-top:14px}
+.vycvik-chapter .odv-lab-focus>span{font-size:10px;font-weight:850;color:var(--lab-muted);letter-spacing:.08em}
+.vycvik-chapter .odv-lab-focus>div{margin-top:6px;font-weight:700}
+.vycvik-chapter .odv-lab-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.vycvik-chapter .odv-lab-controls button{font-size:12px;padding:10px 7px}
+.vycvik-chapter .odv-lab-controls button:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.vycvik-chapter .odv-lab-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px}
+.vycvik-chapter .odv-lab-dots button{background:var(--lab-border);width:12px;height:12px;border:0;border-radius:100px;cursor:pointer;padding:0}
+.vycvik-chapter .odv-lab-dots button.is-active{background:var(--lab-accent);width:30px;border-radius:12px}
+.vycvik-chapter .odv-lab-components{margin-top:16px;padding-top:12px;border-top:1px solid var(--lab-border)}
+.vycvik-chapter .odv-lab-components h4{font-size:16px;color:var(--lab-text);margin:0 0 12px}.vycvik-chapter .odv-lab-components h4 span{font-size:12px;font-weight:500;color:var(--lab-muted)}
+.vycvik-chapter .odv-component-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.vycvik-chapter .odv-component-buttons button{display:flex;align-items:center;gap:7px;font-size:12px;padding:6px 11px}
+.vycvik-chapter .odv-component-buttons b{display:grid;place-items:center;border-radius:7px;background:var(--lab-focus);min-width:22px;height:22px;font-weight:850}
+.vycvik-chapter .odv-component-buttons button.is-active{border-color:var(--lab-accent);background:var(--lab-focus)}
+.vycvik-chapter .odv-part-explanation{font-size:13px;line-height:1.6;color:var(--lab-muted);margin:10px 0 0;padding:11px 14px;border-radius:9px;border-left:3px solid var(--lab-accent);background:var(--lab-focus)}
+.vycvik-chapter .odv-lab-disclaimer{color:var(--lab-muted);font-size:12px;line-height:1.65;margin-top:15px}
+/* SVG technical line art; keep pure white artboard regardless of theme */
+#odv-breaker-svg .odv-svg-wire,#odv-breaker-svg .odv-svg-fixed-contact,#odv-breaker-svg .odv-svg-contact-arm,#odv-breaker-svg .odv-svg-arc-chamber,#odv-breaker-svg .odv-svg-bimetal-lead{fill:none;stroke:#171d21;stroke-width:4.1;stroke-linecap:round;stroke-linejoin:round}
+#odv-breaker-svg .odv-svg-caption{font:850 21px system-ui,sans-serif;fill:#265f64;letter-spacing:.035em}
+#odv-breaker-svg .odv-svg-caption-muted{font:14px system-ui,sans-serif;fill:#6a8186}
+#odv-breaker-svg .odv-svg-label{font:700 38px Georgia,serif;fill:#20282b;pointer-events:none}
+#odv-breaker-svg .odv-svg-link{stroke:#929a9b;stroke-width:3.6;stroke-dasharray:10 8;fill:none}
+#odv-breaker-svg .odv-svg-latch{fill:none;stroke:#151d21;stroke-width:3.5;stroke-linecap:round}
+#odv-breaker-svg .odv-svg-bimetal{fill:#fff;stroke:#24292d;stroke-width:3.6}
+#odv-breaker-svg .odv-svg-core{fill:#f2f5f5;stroke:#24292d;stroke-width:3.6}
+#odv-breaker-svg .odv-svg-core-top,#odv-breaker-svg .odv-svg-coil-winding,#odv-breaker-svg .odv-svg-coil-body,#odv-breaker-svg .odv-svg-spring,#odv-breaker-svg .odv-svg-wall{fill:none;stroke:#202729;stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round}
+#odv-breaker-svg .odv-svg-core-arrow{stroke:#667c82;stroke-width:2.2}
+#odv-breaker-svg .odv-svg-coil-body{fill:#fff}
+#odv-breaker-svg .odv-svg-contact-dot{fill:#171d21}
+#odv-breaker-svg .odv-svg-flow-arrows{fill:none;stroke:#8ca1a4;stroke-width:2.5;opacity:.55}
+#odv-breaker-svg .odv-svg-signal rect{fill:#eff6f6}#odv-breaker-svg .odv-svg-signal text{fill:#385d63;font:700 17px system-ui,sans-serif}#odv-breaker-svg #odv-svg-indicator{fill:#19aa69}
+#odv-breaker-svg .odv-svg-arc{fill:none;stroke:#e9912d;stroke-width:6;stroke-linejoin:round;stroke-linecap:round;opacity:0}
+#odv-breaker-svg .odv-part{cursor:pointer;outline:none}#odv-breaker-svg .odv-part-hit{fill:transparent;stroke:none}
+#odv-breaker-svg .odv-part.is-active .odv-svg-label,#odv-breaker-svg .odv-part.is-picked .odv-svg-label{fill:#008e93}
+#odv-breaker-svg .odv-part.is-active .odv-svg-bimetal,#odv-breaker-svg .odv-part.is-picked .odv-svg-bimetal{stroke:#ec8b35;stroke-width:6}
+#odv-breaker-svg .odv-part.is-active .odv-svg-coil-winding,#odv-breaker-svg .odv-part.is-picked .odv-svg-coil-winding{stroke:#137da9;stroke-width:6}
+#odv-breaker-svg .odv-part.is-active .odv-svg-latch{stroke:#e18f2f;stroke-width:6}
+#odv-breaker-svg .odv-part.is-active .odv-svg-spring{stroke:#d57d3b;stroke-width:6}
+#odv-breaker-svg .odv-part:focus-visible .odv-svg-label{paint-order:stroke;stroke:#81dfdb;stroke-width:7}
+#odv-breaker-svg #odv-moving-contact{transform-box:fill-box;transform-origin:62px 62px;transition:transform .65s ease}
+#odv-breaker-svg #odv-bimetal{transition:transform .7s ease;transform-origin:451px 286px}
+#odv-breaker-svg #odv-magnet-core{transition:transform .38s ease}
+#odv-breaker-svg #odv-latch-lever{transition:transform .5s ease}
+#odv-breaker-svg #odv-spring{transition:transform .65s ease}
+#odv-breaker-svg.is-tripped #odv-moving-contact{transform:translate(60px,34px) rotate(10deg)}
+#odv-breaker-svg.is-overheated #odv-bimetal{transform:rotate(-9deg) translate(3px,0)}
+#odv-breaker-svg.is-magnetic #odv-magnet-core{transform:translateY(-28px)}
+#odv-breaker-svg.is-unlatched #odv-latch-lever{transform:translateY(14px)}
+#odv-breaker-svg.is-tripped #odv-spring{transform:scaleX(.82) translateX(42px)}
+#odv-breaker-svg.is-arcing #odv-electrical-arc{opacity:1;animation:odv-arc-flash .28s infinite alternate}
+#odv-breaker-svg.is-tripped:not(.is-arcing) #odv-electrical-arc{opacity:0}
+#odv-breaker-svg.is-tripped #odv-svg-indicator{fill:#dc7a41}
+@keyframes odv-arc-flash{from{opacity:.9;stroke-width:7}to{opacity:.35;stroke-width:4}}
+@media(max-width:900px){.vycvik-chapter .odv-lab-stage{grid-template-columns:1fr}.vycvik-chapter .odv-lab-details{min-height:275px}.vycvik-chapter .odv-lab-status{margin-top:0}}
+@media(max-width:520px){.vycvik-chapter .odv-lab-number{display:none}.vycvik-chapter .odv-lab-visual{padding:0}.vycvik-chapter .odv-lab-header p{font-size:13px}.vycvik-chapter .odv-component-buttons button{font-size:11px;padding:5px 7px}}
+@media(prefers-reduced-motion:reduce){#odv-breaker-svg *{animation:none!important;transition:none!important}}
