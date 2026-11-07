@@ -2311,3 +2311,55 @@ html[data-theme=dark] .vycvik-chapter .odv-appliance-card figcaption{color:#c3d8
 html[data-theme=dark] .vycvik-chapter .odv-appliance-card figcaption strong{color:#7ee1d9}
 @media(max-width:860px){.vycvik-chapter .odv-appliance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){.vycvik-chapter .odv-appliance-grid{gap:9px}.vycvik-chapter .odv-appliance-image{height:180px;padding:6px}.vycvik-chapter .odv-appliance-card figcaption{padding:11px 7px 14px}.vycvik-chapter .odv-appliance-card figcaption strong{font-size:.85rem}.vycvik-chapter .odv-appliance-card figcaption span{font-size:.7rem}}
+
+/* Kapitola 3: čtyři kompaktní přístroje v jedné řadě, šedé popisky pod fotografiemi. */
+.vycvik-chapter .odv-appliance-grid {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 12px;
+  max-width: 960px;
+  margin: 24px auto 30px;
+}
+.vycvik-chapter .odv-appliance-card {
+  border-radius: 13px;
+  box-shadow: 0 5px 15px rgba(4,45,50,.06);
+}
+.vycvik-chapter .odv-appliance-image {
+  height: 158px;
+  padding: 9px 12px;
+  background: #fff;
+}
+.vycvik-chapter .odv-appliance-image img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+.vycvik-chapter .odv-appliance-card figcaption {
+  min-height: 70px;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 10px 8px 12px;
+  background: #eef1f2;
+  color: #69757b;
+  font-size: .8rem;
+}
+.vycvik-chapter .odv-appliance-card figcaption strong {
+  color: #4f5b62;
+  font-size: .89rem;
+}
+.vycvik-chapter .odv-appliance-card figcaption span {font-size: .74rem}
+html[data-theme=dark] .vycvik-chapter .odv-appliance-card figcaption {
+  background: #29383e;
+  color: #b7c4c8;
+}
+html[data-theme=dark] .vycvik-chapter .odv-appliance-card figcaption strong {color: #e0e9ea}
+@media(max-width:720px){
+  .vycvik-chapter .odv-appliance-grid {grid-template-columns:repeat(2,minmax(0,1fr));max-width:480px}
+  .vycvik-chapter .odv-appliance-image {height:150px}
+}
+@media(max-width:400px){
+  .vycvik-chapter .odv-appliance-grid {gap:9px}
+  .vycvik-chapter .odv-appliance-image {height:132px;padding:7px}
+  .vycvik-chapter .odv-appliance-card figcaption {padding:9px 6px 10px;min-height:74px}
+}
