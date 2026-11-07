@@ -2456,3 +2456,50 @@ html[data-theme="dark"] .vycvik-chapter .odv-breaker-lab{--lab-border:#39585b;--
 @media(max-width:900px){.vycvik-chapter .odv-lab-stage{grid-template-columns:1fr}.vycvik-chapter .odv-lab-details{min-height:275px}.vycvik-chapter .odv-lab-status{margin-top:0}}
 @media(max-width:520px){.vycvik-chapter .odv-lab-number{display:none}.vycvik-chapter .odv-lab-visual{padding:0}.vycvik-chapter .odv-lab-header p{font-size:13px}.vycvik-chapter .odv-component-buttons button{font-size:11px;padding:5px 7px}}
 @media(prefers-reduced-motion:reduce){#odv-breaker-svg *{animation:none!important;transition:none!important}}
+
+/* Verze 2: souvislé schéma, velká plocha a zjednodušené animace */
+.vycvik-chapter .odv-lab-stage{grid-template-columns:minmax(0,1fr);gap:14px}
+.vycvik-chapter .odv-lab-visual{padding:12px;background:#fff;max-width:100%;}
+.vycvik-chapter #odv-breaker-svg{width:100%;height:auto;display:block;max-height:670px;}
+.vycvik-chapter .odv-lab-details{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;align-items:start;padding:20px 24px}
+.vycvik-chapter .odv-lab-step-tag,.vycvik-chapter .odv-lab-details h4,.vycvik-chapter .odv-lab-details>p{grid-column:1/-1}
+.vycvik-chapter .odv-lab-details h4{margin:2px 0}
+.vycvik-chapter .odv-lab-details>p{margin:0 0 8px}
+.vycvik-chapter .odv-lab-status{margin:0;min-height:54px}
+.vycvik-chapter .odv-lab-focus{margin:0}
+.vycvik-chapter .odv-lab-controls,.vycvik-chapter .odv-lab-dots{grid-column:1/-1}
+.vycvik-chapter .odv-lab-controls{grid-template-columns:repeat(4,minmax(0,1fr));}
+#odv-breaker-svg .odv-drawing{fill:none;stroke:#141a1c;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#odv-breaker-svg .odv-thin{fill:none;stroke:#141a1c;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#odv-breaker-svg .odv-dashed{fill:none;stroke:#93989c;stroke-width:2.8;stroke-dasharray:10 8}
+#odv-breaker-svg .odv-num{font:600 32px Georgia,serif;fill:#20272b;stroke:none;pointer-events:none}
+#odv-breaker-svg .odv-bimetal-shape{fill:#fff;stroke:#141a1c;stroke-width:3}
+#odv-breaker-svg .odv-coil-body{fill:#fff;stroke:#141a1c;stroke-width:2.7}
+#odv-breaker-svg .odv-winding{fill:none;stroke:#141a1c;stroke-width:2.7}
+#odv-breaker-svg .odv-core-body{fill:#f0f2f3;stroke:#141a1c;stroke-width:2.7}
+#odv-breaker-svg .odv-hit{fill:transparent;stroke:none;pointer-events:all;}
+#odv-breaker-svg .odv-part{cursor:pointer}
+#odv-breaker-svg .odv-part.is-active .odv-num,#odv-breaker-svg .odv-part.is-picked .odv-num{fill:#008d94}
+#odv-breaker-svg .odv-part.is-active .odv-bimetal-shape{stroke:#eb8b2c;stroke-width:5}
+#odv-breaker-svg .odv-part.is-active .odv-winding{stroke:#198bb5;stroke-width:4}
+#odv-breaker-svg .odv-part.is-active #odv-latch-link{stroke:#ed922e}
+#odv-breaker-svg .odv-part.is-active #odv-spring{stroke:#d98139}
+#odv-breaker-svg .odv-part:focus-visible .odv-num{paint-order:stroke;stroke:#8fe7dd;stroke-width:8}
+#odv-breaker-svg #odv-moving-contact{transform-origin:175px 190px;transform-box:view-box;transition:transform .55s ease}
+#odv-breaker-svg #odv-bimetal{transform-origin:448px 278px;transform-box:view-box;transition:transform .6s ease}
+#odv-breaker-svg #odv-magnet-core{transition:transform .45s ease}
+#odv-breaker-svg #odv-latch-lever{transition:transform .45s ease}
+#odv-breaker-svg #odv-spring{transition:transform .5s ease}
+#odv-breaker-svg.is-tripped #odv-moving-contact{transform:rotate(-15deg)}
+#odv-breaker-svg.is-overheated #odv-bimetal{transform:rotate(-8deg)}
+#odv-breaker-svg.is-magnetic #odv-magnet-core{transform:translateY(27px)}
+#odv-breaker-svg.is-unlatched #odv-latch-lever{transform:translateY(12px)}
+#odv-breaker-svg.is-tripped #odv-spring{transform:translateX(-15px)}
+#odv-breaker-svg .odv-arc-flash{fill:none;stroke:#e9931e;stroke-width:5;opacity:0}
+#odv-breaker-svg.is-arcing .odv-arc-flash{opacity:1;animation:odv-arc-flash .28s infinite alternate}
+#odv-breaker-svg #odv-svg-indicator{fill:#18a36c}
+#odv-breaker-svg.is-tripped #odv-svg-indicator{fill:#dd8147}
+#odv-breaker-svg .odv-state-label{font:700 15px system-ui,sans-serif;fill:#335c62;stroke:none}
+#odv-breaker-svg .odv-svg-caption{font:800 19px system-ui,sans-serif;fill:#275e65;stroke:none}
+#odv-breaker-svg .odv-svg-caption-muted{font:13px system-ui,sans-serif;fill:#6e8287;stroke:none}
+@media(max-width:700px){.vycvik-chapter .odv-lab-details{display:flex;flex-direction:column;gap:9px}.vycvik-chapter .odv-lab-controls{display:grid;grid-template-columns:repeat(2,1fr);width:100%}.vycvik-chapter .odv-lab-details h4{margin:0}.vycvik-chapter .odv-lab-visual{padding:4px}}
