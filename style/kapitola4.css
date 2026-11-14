@@ -36,3 +36,14 @@
 @media(max-width:440px){.odv1-simulation{padding:13px 10px}.odv1-controls{padding:13px 11px;grid-template-columns:80px 1fr}.odv1-rocker{width:64px;height:84px;grid-column:1}.odv1-controls .odv1-primary-button,.odv1-controls .odv1-reset{grid-column:2}.odv1-quiz-buttons button{padding:8px 17px}}
 @media(prefers-reduced-motion:reduce){.odv1-simulation #odv1-trace-out,.odv1-simulation #odv1-trace-n{animation:none!important}}
 @media print{.odv1-controls,.odv1-quiz,.odv1-mobile-tip{display:none!important}.odv1-layout{display:block}.odv1-drawing-scroll{overflow:visible}.odv1-drawing-scroll svg{min-width:0;width:100%}}
+
+
+/* Vložená samostatná simulace vypínače č. 1 */
+.odv1-embedded-section{margin:34px 0 32px;padding:clamp(12px,2vw,24px);background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);scroll-margin-top:90px}
+.odv1-embedded-heading h3{margin:5px 0 8px;font-size:clamp(1.3rem,2.5vw,1.7rem)}
+.odv1-embedded-heading p{color:var(--muted);font-size:.9rem;margin-bottom:15px}
+.odv1-embedded-frame{display:block;width:100%;height:790px;background:#0d1117;border:1px solid var(--line);border-radius:12px}
+.odv1-embedded-link{margin:12px 0 5px;font-size:.85rem;font-weight:750}
+.odv1-embedded-warning{font-size:.82rem;color:var(--muted);margin:8px 0 0}
+@media(max-width:860px){.odv1-embedded-frame{height:1180px}}
+@media(max-width:520px){.odv1-embedded-section{padding:9px}.odv1-embedded-frame{height:1240px}}
