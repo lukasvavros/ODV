@@ -301,61 +301,61 @@ footer{border-top:1px solid var(--line);padding:18px 20px;color:var(--mute);font
 
 /* Vycentrování kruhů a schématu */
 .simulation-root .diagram{display:flex;justify-content:center;align-items:center;width:100%}
-.simulation-root .diagram svg{display:block;width:100%;max-width:650px;height:auto;margin:0 auto;flex:0 1 auto}
+.simulation-root .diagram svg{display:block;width:100%;max-width:530px;height:auto;margin:0 auto;flex:0 1 auto}
 </style>
 <div class="simulation-root"><main>
 <p class="sub">Dvoupólový vypínač současně spíná fázi L1 a nulový vodič N. Červené tečky jsou na přívodu L1 viditelné i při vypnutí; po sepnutí pokračují přes svítidlo.</p>
 <div class="grid"><div class="card"><div class="card-heading">Schéma zapojení <small>KU 68 · L1 / N / PE</small></div>
-<div class="diagram"><svg aria-label="Symetrické zapojení dvoupólového vypínače č. 2, svítidla a krabice KU 68" role="img" viewbox="0 0 652 570">
-<defs><radialgradient id="odv2-glow"><stop offset="0" stop-color="#ffd45a" stop-opacity=".9"></stop><stop offset="1" stop-color="#ffb020" stop-opacity="0"></stop></radialgradient></defs>
-<!-- Kruhy KU 68, vypínače a svítidla jsou na společné svislé ose x=326. -->
-<circle cx="326" cy="255" fill="var(--box)" r="120" stroke="var(--blue)" stroke-width="2"></circle>
+<div class="diagram"><svg aria-label="Schéma zapojení svítidla, dvoupólového vypínače č. 2 a krabice KU 68" role="img" viewbox="0 0 530 570">
+<defs><radialgradient id="g"><stop offset="0" stop-color="#ffd45a" stop-opacity=".9"></stop><stop offset="1" stop-color="#ffb020" stop-opacity="0"></stop></radialgradient></defs>
+<!-- box -->
+<circle cx="326" cy="252" fill="var(--box)" r="125" stroke="var(--blue)" stroke-width="2"></circle>
+<path d="M275 197L320 192M331 186L384 216M264 226V282M395 226L394 278M266 295L316 327M335 325L372 312" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+<!-- switch body -->
 <circle class="sw" cx="326" cy="460" fill="var(--sw)" r="58" stroke="var(--ink)" stroke-width="1.5"></circle>
-<!-- PE, nepřerušovaný ochranný vodič -->
-<g class="w" stroke-linecap="round"><path d="M60 130H300V190H326V92" stroke="#2fa12f"></path><path d="M60 130H300V190H326V92" stroke="#f2e51a" stroke-dasharray="20 17"></path></g>
-<!-- N (modrý), dvě přehledně uspořádané dvojice svorek -->
-<path class="w bl" d="M60 170H185V250H252M276 250H185V380H326V437"></path>
-<path class="w bl" d="M326 481V515H540V250H400M376 250H457V78H306"></path>
-<!-- L1 (hnědý), vodorovné svorky ve spodní části krabice -->
-<path class="w br" d="M60 210H145V412H252M276 315H304V437"></path>
-<path class="w br" d="M304 481V540H560V315H400M376 315H492V78H346"></path>
-<!-- Symetrické můstky svorek v krabici (páry vždy 24 bodů od sebe) -->
-<path class="w bl" d="M252 250H276M376 250H400"></path>
-<path class="w br" d="M252 315H276M376 315H400M252 412V315"></path>
-<path class="w" d="M300 190H326" stroke="#2fa12f"></path>
-<!-- Svorky PE / N / L1, v pravidelných párech okolo středu KU 68 -->
-<g stroke="var(--ink)" stroke-width="1"><circle cx="300" cy="190" fill="#2fa12f" r="6"></circle><circle cx="326" cy="190" fill="#2fa12f" r="6"></circle>
-<circle cx="252" cy="250" fill="#1ea0e6" r="6"></circle><circle cx="276" cy="250" fill="#1ea0e6" r="6"></circle><circle cx="376" cy="250" fill="#1ea0e6" r="6"></circle><circle cx="400" cy="250" fill="#1ea0e6" r="6"></circle>
-<circle cx="252" cy="315" fill="#7a3516" r="6"></circle><circle cx="276" cy="315" fill="#7a3516" r="6"></circle><circle cx="376" cy="315" fill="#7a3516" r="6"></circle><circle cx="400" cy="315" fill="#7a3516" r="6"></circle></g>
-<text class="t" font-size="24" font-weight="650" text-anchor="middle" x="326" y="283">KU 68</text>
-<!-- Pohybující se červené tečky, přívod trvale, zbývající úseky po sepnutí -->
-<path class="fl feed" d="M60 210H145V412H252V315H276H304V437"></path>
-<path class="fl return" d="M304 481V540H560V315H400H376H492V78H346"></path>
-<path class="fl return" d="M306 78H457V250H376H400H540V515H326V481" style="animation-delay:-.2s"></path>
-<path class="fl return" d="M326 437V380H185V250H276H252H185V170H60" style="animation-delay:-.35s"></path>
-<!-- Svítidlo přímo nad středem krabice -->
-<circle class="glow" cx="326" cy="54" fill="url(#odv2-glow)" r="72"></circle>
-<circle cx="326" cy="54" fill="none" r="39" stroke="var(--ink)" stroke-dasharray="7 6" stroke-width="2"></circle>
-<circle class="lamp" cx="326" cy="54" r="22"></circle>
-<path d="M315 43L337 65M337 43L315 65" stroke="var(--ink)" stroke-width="2.5"></path>
-<circle cx="326" cy="92" fill="#2fa12f" r="5"></circle>
-<circle cx="385" cy="87" fill="#f2e51a" r="16" stroke="#2fa12f" stroke-width="2"></circle>
-<path d="M385 76V85M377 85H393M380 89H390M383 93H387" fill="none" stroke="#1d2430" stroke-width="2"></path>
-<!-- Dva mechanicky spojené kontakty, polohy a ovládání zachovány -->
+<!-- PE -->
+<g class="w"><path d="M45 128H285V195M308 193V85" stroke="#2fa12f"></path><path d="M45 128H285V195M308 193V85" stroke="#f2e51a" stroke-dasharray="26 26"></path></g>
+<!-- N -->
+<path class="w bl" d="M45 162H178V240H265M266 265H178V378H326V437M267 45H215V100H470V192H342M373 210H470V512H326V481"></path>
+<!-- L1 -->
+<path class="w br" d="M45 190H145V412H277V302M304 320V437M304 481V545H500V264H394M395 240H500V45H343"></path>
+<!-- pair links in box -->
+<path class="w" d="M285 195L308 193" stroke="#2fa12f"></path>
+<path class="w bl" d="M265 240V265M342 192L373 210"></path>
+<path class="w br" d="M395 240L394 264M277 302L304 320"></path>
+<g stroke="#000" stroke-width="0"><circle cx="285" cy="195" fill="#2fa12f" r="6"></circle><circle cx="308" cy="193" fill="#2fa12f" r="6"></circle>
+<circle cx="265" cy="240" fill="#1ea0e6" r="6"></circle><circle cx="266" cy="265" fill="#1ea0e6" r="6"></circle><circle cx="342" cy="192" fill="#1ea0e6" r="6"></circle><circle cx="373" cy="210" fill="#1ea0e6" r="6"></circle>
+<circle cx="395" cy="240" fill="#7a3516" r="6"></circle><circle cx="394" cy="264" fill="#7a3516" r="6"></circle><circle cx="277" cy="302" fill="#7a3516" r="6"></circle><circle cx="304" cy="320" fill="#7a3516" r="6"></circle></g><g class="odv2-flow" fill="none">
+<path class="fl feed" d="M45 190H145V412H277V302L304 320V437"></path>
+<path class="fl return" d="M304 481V545H500V264H394L395 240H500V45H343"></path>
+<path class="fl return" d="M267 45H215V100H470V192H342L373 210H470V512H326V481"></path>
+<path class="fl return" d="M326 437V378H178V265H266L265 240H178V162H45"></path>
+</g>
+<text class="t" font-size="24" font-weight="600" text-anchor="middle" x="326" y="262">KU 68</text>
+<!-- flow -->
+<!-- lamp -->
+<circle class="glow" cx="305" cy="45" fill="url(#g)" r="72"></circle>
+<circle cx="305" cy="45" fill="none" r="38" stroke="var(--ink)" stroke-dasharray="7 6" stroke-width="2"></circle>
+<circle class="lamp" cx="305" cy="45" r="22"></circle>
+<path d="M294 34L316 56M316 34L294 56" stroke="var(--ink)" stroke-width="2.5"></path>
+<circle cx="308" cy="85" fill="#2fa12f" r="5"></circle>
+<circle cx="365" cy="82" fill="#f2e51a" r="17" stroke="#2fa12f" stroke-width="2"></circle>
+<path d="M365 71V80M357 80H373M360 84H370M363 88H367" fill="none" stroke="#1d2430" stroke-width="2"></path>
+<!-- switch -->
 <g aria-label="Vypínač č. 2" class="sw" id="sw" role="button" tabindex="0">
 <circle cx="326" cy="460" fill="transparent" r="58"></circle>
 <circle cx="304" cy="437" fill="#000" r="6"></circle><circle cx="326" cy="437" fill="#000" r="6"></circle>
-<circle cx="304" cy="481" fill="#fff" r="6" stroke="#000" stroke-width="2"></circle>
-<circle cx="326" cy="481" fill="#fff" r="6" stroke="#000" stroke-width="2"></circle>
+<circle cx="304" cy="481" fill="#fff" r="6" stroke="#000" stroke-width="2"></circle><circle cx="326" cy="481" fill="#fff" r="6" stroke="#000" stroke-width="2"></circle>
 <line class="lever l1" stroke="#000" stroke-linecap="round" stroke-width="3.5" x1="304" x2="304" y1="437" y2="478"></line>
 <line class="lever l2" stroke="#000" stroke-linecap="round" stroke-width="3.5" x1="326" x2="326" y1="437" y2="478"></line>
 <line class="cpl" stroke="#000" stroke-dasharray="3 3" stroke-width="2" x1="304" x2="326" y1="459" y2="459"></line>
+<circle cx="304" cy="437" fill="#000" r="6"></circle><circle cx="326" cy="437" fill="#000" r="6"></circle>
 </g>
-<text class="t" font-size="18" font-weight="600" text-anchor="end" x="253" y="480">č. 2</text>
-<text class="t" font-size="18" font-weight="600" x="382" y="45">svítidlo</text>
-<text class="t" font-size="19" font-weight="600" x="19" y="136">PE</text>
-<text class="t" font-size="19" font-weight="600" x="30" y="176">N</text>
-<text class="t" font-size="19" font-weight="600" x="20" y="216">L1</text>
+<text class="t" font-size="18" font-weight="600" text-anchor="end" x="258" y="506">č. 2</text>
+<text class="t" font-size="18" font-weight="600" x="358" y="32">svítidlo</text>
+<text class="t" font-size="19" font-weight="600" x="6" y="134">PE</text>
+<text class="t" font-size="19" font-weight="600" x="6" y="168">N</text>
+<text class="t" font-size="19" font-weight="600" x="6" y="196">L1</text>
 </svg></div>
 <div class="legend"><span><i style="background:var(--brown)"></i>L1 – fáze</span><span><i style="background:var(--blue)"></i>N – nulový vodič</span><span><i style="background:#2fa12f"></i>PE – ochranný vodič</span></div>
 </div>
