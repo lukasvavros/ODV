@@ -13,6 +13,18 @@
 <section id="simulace-vypinac1" class="odv1-embedded-section" aria-label="Simulace vypínače č. 1">
   <template id="odv1-inline-template"><style>
 :host{color-scheme:dark;--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#919dab;--line:#30363d;--brown:#d58a5c;--blue:#58a6ff;--box:#172b3d;--sw:#303a48;--accent:#238636;--accent-hover:#2ea043;--spark:#ff3b3b;--lampoff:#161b22}
+:host([data-theme="light"]){color-scheme:light;--bg:#f3f8f7;--card:#fff;--ink:#263f43;--mute:#59777a;--line:#d3e5e1;--brown:#82412c;--blue:#168ac5;--box:#e4f2fb;--sw:#d4dfe0;--accent:#087e79;--accent-hover:#076a66;--spark:#ed3434;--lampoff:#fff}
+:host([data-theme="dark"]){color-scheme:dark}
+:host([data-theme="light"]) .card{border-color:var(--line)}
+:host([data-theme="light"]) .card-heading{background:#edf5f3}
+:host([data-theme="light"]) .state-dot{background:#bf8d25}
+:host([data-theme="light"]) li.pre{background:#fff6df;border-color:#e6ca84}
+:host([data-theme="light"]) li.pre b{color:#96701f}
+:host([data-theme="light"].on) li{background:#e7f6ee;border-color:#96d5b0}
+:host([data-theme="light"].on) li b{border-color:#218b59;color:#17764d}
+:host([data-theme="light"].on) button{background:#e7f3f0;border-color:#087e79;color:#075b57}
+:host([data-theme="light"]) .simulation-root .card{border-color:var(--line)}
+:host([data-theme="light"]) .simulation-root .legend{color:var(--mute)}
 *{box-sizing:border-box}
 .simulation-root{scroll-behavior:smooth}
 .simulation-root{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -75,8 +87,6 @@ footer{border-top:1px solid var(--line);padding:18px 20px;color:var(--mute);font
 
 :host{display:block;min-width:0;} .simulation-root{border-radius:15px;overflow:hidden} .simulation-root main{padding:16px 12px 22px;max-width:none} .simulation-root .grid{gap:14px} .simulation-root .card{border-color:#394751} @media(min-width:860px){.simulation-root .grid{grid-template-columns:minmax(0,1.3fr) minmax(270px,.85fr)}}
 </style><div class="simulation-root"><main>
-<p class="eyebrow">Elektroinstalace / Základní zapojení</p>
-<h1>Simulace vypínače č. 1</h1>
 <p class="sub">Fáze L1 je přivedena až k vypínači i při rozepnutém kontaktu. Kliknutím na vypínač uzavřete obvod a rozsvítíte svítidlo.</p>
 <div class="grid">
 <div class="card">
@@ -162,6 +172,15 @@ footer{border-top:1px solid var(--line);padding:18px 20px;color:var(--mute);font
   const host = document.getElementById('odv1-inline-host');
   const template = document.getElementById('odv1-inline-template');
   if (!host || !template) return;
+  // Synchronizace se světlým/tmavým režimem celé kapitoly.
+  function syncTheme() {
+    const selected = document.documentElement.dataset.theme;
+    const theme = selected === 'light' || selected === 'dark'
+      ? selected : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    host.dataset.theme = theme;
+  }
+  syncTheme();
+  new MutationObserver(syncTheme).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
   const root = host.attachShadow({mode:'open'});
   root.appendChild(template.content.cloneNode(true));
   const button = root.getElementById('b');
