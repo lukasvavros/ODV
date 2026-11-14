@@ -7,7 +7,7 @@
 <meta name="description" content="Interaktivní simulace zapojení vypínače č. 1 se znázorněním přítomnosti napětí a toku proudu.">
 <meta name="theme-color" content="#0d1117">
 <style>
-:root{color-scheme:dark;--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#919dab;--line:#30363d;--brown:#d58a5c;--blue:#58a6ff;--box:#172b3d;--sw:#303a48;--accent:#238636;--accent-hover:#2ea043;--spark:#f2cc60;--lampoff:#161b22}
+:root{color-scheme:dark;--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#919dab;--line:#30363d;--brown:#d58a5c;--blue:#58a6ff;--box:#172b3d;--sw:#303a48;--accent:#238636;--accent-hover:#2ea043;--spark:#ff3b3b;--lampoff:#161b22}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -54,10 +54,10 @@ body.on li b{border-color:#3fb950;color:#7ee787}
 .t{fill:var(--ink);font-family:inherit}
 .w{fill:none;stroke-width:4;stroke-linejoin:round}
 .br{stroke:var(--brown)}.bl{stroke:var(--blue)}
-.fl{fill:none;stroke:var(--spark);stroke-width:3;stroke-linecap:round;stroke-dasharray:1 13;opacity:0;transition:opacity .2s}
-.fl.feed{opacity:1;animation:f .7s linear infinite} /* Pohybující se značky znázorňují napětí na přívodu, ne skutečný proud v rozepnutém obvodu. */
-body.on .fl.return{opacity:1;animation:f .7s linear infinite}
-@keyframes f{to{stroke-dashoffset:-14}}
+.fl{fill:none;stroke:var(--spark);stroke-width:4;stroke-linecap:round;stroke-dasharray:1 14;opacity:0;transition:opacity .2s}
+.fl.feed{opacity:1;animation:f .75s linear infinite} /* Pohybující se značky znázorňují napětí na přívodu, ne skutečný proud v rozepnutém obvodu. */
+body.on .fl.return{opacity:1;animation:f .75s linear infinite}
+@keyframes f{to{stroke-dashoffset:-15}}
 .lever{transform-origin:345px 412px;transform:rotate(24deg);transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
 body.on .lever{transform:rotate(0)}
 .lamp{fill:var(--lampoff);stroke:var(--ink);stroke-width:2;transition:fill .25s}
@@ -99,7 +99,7 @@ footer{border-top:1px solid var(--line);padding:18px 20px;color:var(--mute);font
 <circle cx="320" cy="295" r="6" fill="#7a3516"/><circle cx="345" cy="295" r="6" fill="#7a3516"/>
 <circle cx="402" cy="232" r="6" fill="#7a3516"/><circle cx="402" cy="250" r="6" fill="#7a3516"/>
 <text class="t" x="340" y="248" font-size="24" font-weight="600" text-anchor="middle">KU 68</text>
-<!-- flow sparks -->
+<!-- Červené tečky: přívod L1 běží stále, zbytek obvodu jen při sepnutí -->
 <path class="fl feed" d="M75 185H168V348H320V295H345V412"/>
 <path class="fl return" d="M345 455V480H492V255H402"/>
 <path class="fl return" d="M402 232H490V48H380"/>
