@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vypínač č. 1 | Interaktivní elektrotechnika</title>
+<meta name="description" content="Interaktivní simulace zapojení vypínače č. 1 se znázorněním přítomnosti napětí a toku proudu.">
+<meta name="theme-color" content="#0d1117">
+<style>
+:root{color-scheme:dark;--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#919dab;--line:#30363d;--brown:#d58a5c;--blue:#58a6ff;--box:#172b3d;--sw:#303a48;--accent:#238636;--accent-hover:#2ea043;--spark:#f2cc60;--lampoff:#161b22}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--blue)}
+.site-header{border-bottom:1px solid var(--line);background:#010409}
+.header-content{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:.01em}
+.brand-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:#238636;color:#fff;font-size:20px}
+.header-tag{font-size:.8rem;color:var(--mute);border:1px solid var(--line);border-radius:30px;padding:4px 10px}
+main{max-width:1120px;margin:0 auto;padding:34px 20px 45px}
+.eyebrow{color:#7ee787;font-size:.76rem;letter-spacing:.13em;font-weight:750;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(1.65rem,4vw,2.45rem);line-height:1.15;margin:0 0 12px;letter-spacing:-.025em}
+.sub{color:var(--mute);margin:0 0 24px;max-width:75ch}
+.grid{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.grid{grid-template-columns:minmax(0,1.3fr) minmax(320px,1fr);align-items:start}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.card-heading{font-weight:650;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 17px;border-bottom:1px solid var(--line);font-size:.92rem}
+.card-heading small{color:var(--mute);font-weight:450}
+.diagram{padding:12px 6px 8px;overflow:hidden}
+svg{display:block;width:100%;height:auto;max-width:100%}
+.panel{padding:20px}
+button{font:inherit;font-weight:700;width:100%;padding:13px 16px;border-radius:8px;border:1px solid #2ea043;background:var(--accent);color:#fff;cursor:pointer;min-height:48px;transition:background .2s,border-color .2s}
+button:hover{background:var(--accent-hover)}
+body.on button{background:#21262d;border-color:#6e7681;color:var(--ink)}
+button:focus-visible,.sw:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.state{display:flex;align-items:center;gap:9px;margin:16px 0 8px;font-weight:650}
+.state-dot{background:#e3b341;width:10px;height:10px;border-radius:50%;flex:none}
+body.on .state-dot{background:#3fb950;box-shadow:0 0 0 4px #23863640}
+.status{margin:0 0 18px;color:var(--mute);font-size:.9rem}
+.section-heading{margin:23px 0 11px;font-size:1rem}
+ol{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+li{display:flex;align-items:flex-start;gap:10px;padding:10px;border-radius:9px;color:var(--mute);border:1px solid var(--line);transition:background .2s}
+li b{flex:none;width:23px;height:23px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font-size:.75rem}
+li.pre{color:var(--ink);background:#322a16;border-color:#745b24}
+li.pre b{color:#f2cc60}
+body.on li{color:var(--ink);border-color:#2f6f46;background:#142a1b}
+body.on li b{border-color:#3fb950;color:#7ee787}
+.note{color:var(--mute);font-size:.88rem;margin:14px 0 0}
+.info{margin-top:16px;padding:14px;border-left:3px solid #e3b341;border-radius:7px;background:#252214}
+.info .note{margin:0;color:#e6d9af}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:0 10px 10px;padding:0 12px 5px;color:var(--mute);font-size:.8rem}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:19px;height:3px;border-radius:4px}
+.t{fill:var(--ink);font-family:inherit}
+.w{fill:none;stroke-width:4;stroke-linejoin:round}
+.br{stroke:var(--brown)}.bl{stroke:var(--blue)}
+.fl{fill:none;stroke:var(--spark);stroke-width:3;stroke-linecap:round;stroke-dasharray:1 13;opacity:0;transition:opacity .2s}
+.fl.feed{opacity:1;animation:f .7s linear infinite} /* Pohybující se značky znázorňují napětí na přívodu, ne skutečný proud v rozepnutém obvodu. */
+body.on .fl.return{opacity:1;animation:f .7s linear infinite}
+@keyframes f{to{stroke-dashoffset:-14}}
+.lever{transform-origin:345px 412px;transform:rotate(24deg);transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+body.on .lever{transform:rotate(0)}
+.lamp{fill:var(--lampoff);stroke:var(--ink);stroke-width:2;transition:fill .25s}
+body.on .lamp{fill:#ffb020}
+.glow{opacity:0;transition:opacity .3s}
+body.on .glow{opacity:1}
+.sw{cursor:pointer}
+footer{border-top:1px solid var(--line);padding:18px 20px;color:var(--mute);font-size:.82rem;text-align:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fl.feed,body.on .fl.return{animation:none}.lever,.lamp,.glow,li,button{transition:none}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="header-content"><div class="brand"><span class="brand-mark" aria-hidden="true">⚡</span><span>Elektrotechnické simulace</span></div><span class="header-tag">Interaktivní výuka</span></div></header>
+<main>
+<p class="eyebrow">Elektroinstalace / Základní zapojení</p>
+<h1>Simulace vypínače č. 1</h1>
+<p class="sub">Fáze L1 je přivedena až k vypínači i při rozepnutém kontaktu. Kliknutím na vypínač uzavřete obvod a rozsvítíte svítidlo.</p>
+<div class="grid">
+<div class="card">
+<div class="card-heading">Schéma zapojení <small>KU 68 · L1 / N / PE</small></div>
+<div class="diagram">
+<svg viewBox="0 0 530 530" role="img" aria-label="Schéma zapojení svítidla přes krabici KU 68 a vypínač č. 1">
+<defs><radialGradient id="g"><stop offset="0" stop-color="#ffd45a" stop-opacity=".9"/><stop offset="1" stop-color="#ffb020" stop-opacity="0"/></radialGradient></defs>
+<circle cx="340" cy="238" r="100" fill="var(--box)" stroke="var(--blue)" stroke-width="2"/>
+<path d="M303 180H377M303 295H377M283 214V273M402 214V268" stroke="var(--ink)" stroke-width="2" fill="none"/>
+<!-- PE -->
+<g class="w"><path d="M75 125H320V180M345 180V87" stroke="#2fa12f"/><path d="M75 125H320V180M345 180V87" stroke="#f2e51a" stroke-dasharray="14 14"/></g>
+<!-- N -->
+<path class="w bl" d="M305 48H225V232H283V255H195V155H75"/>
+<!-- L1 -->
+<path class="w br" d="M75 185H168V348H320V295H345V412"/>
+<path class="w br" d="M345 455V480H492V255H402V232H490V48H380"/>
+<!-- box -->
+<path class="w br" d="M320 295H345M402 232V250"/>
+<path class="w bl" d="M283 232V255"/>
+<path class="w" d="M320 180H345" stroke="#2fa12f"/>
+<circle cx="320" cy="180" r="6" fill="#2fa12f"/><circle cx="345" cy="180" r="6" fill="#2fa12f"/>
+<circle cx="283" cy="232" r="6" fill="#1ea0e6"/><circle cx="283" cy="255" r="6" fill="#1ea0e6"/>
+<circle cx="320" cy="295" r="6" fill="#7a3516"/><circle cx="345" cy="295" r="6" fill="#7a3516"/>
+<circle cx="402" cy="232" r="6" fill="#7a3516"/><circle cx="402" cy="250" r="6" fill="#7a3516"/>
+<text class="t" x="340" y="248" font-size="24" font-weight="600" text-anchor="middle">KU 68</text>
+<!-- flow sparks -->
+<path class="fl feed" d="M75 185H168V348H320V295H345V412"/>
+<path class="fl return" d="M345 455V480H492V255H402"/>
+<path class="fl return" d="M402 232H490V48H380"/>
+<path class="fl return" d="M305 48H225V232H283V255H195V155H75" style="animation-delay:-.2s"/>
+<!-- lamp -->
+<circle class="glow" cx="343" cy="48" r="70" fill="url(#g)"/>
+<circle cx="343" cy="48" r="38" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="7 6"/>
+<circle class="lamp" cx="343" cy="48" r="22"/>
+<path d="M332 37L354 59M354 37L332 59" stroke="var(--ink)" stroke-width="2.5"/>
+<circle cx="343" cy="87" r="5" fill="#2fa12f"/>
+<circle cx="372" cy="102" r="15" fill="#f2e51a" stroke="#2fa12f" stroke-width="2"/>
+<path d="M372 92V101M364 101H380M367 105H377M370 109H374" stroke="#1d2430" stroke-width="2" fill="none"/>
+<!-- switch -->
+<g class="sw" id="sw" tabindex="0" role="button" aria-label="Vypínač č. 1">
+<circle cx="345" cy="445" r="52" fill="var(--sw)" stroke="var(--ink)" stroke-width="1.5"/>
+<path class="w br" d="M345 393V412M345 455V480H400"/>
+<path class="fl feed" d="M345 393V412"/>
+<path class="fl return" d="M345 455V480H400"/>
+<g fill="none" stroke="#000" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="362" cy="412" r="10" fill="#fff"/><path d="M356 403L362 414L368 403M362 414V397"/></g>
+<circle cx="345" cy="455" r="6" fill="#fff" stroke="#000" stroke-width="2"/>
+<line class="lever" x1="345" y1="412" x2="345" y2="452" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="345" cy="412" r="6" fill="#000"/>
+</g>
+<text class="t" x="285" y="472" font-size="18" font-weight="600" text-anchor="end">č. 1</text>
+<text class="t" x="385" y="70" font-size="18" font-weight="600">svítidlo</text>
+<text class="t" x="40" y="131" font-size="19" font-weight="600">PE</text>
+<text class="t" x="40" y="161" font-size="19" font-weight="600">N</text>
+<text class="t" x="40" y="191" font-size="19" font-weight="600">L1</text>
+</svg>
+</div>
+<div class="legend"><span><i style="background:var(--brown)"></i>L1 – fáze</span><span><i style="background:var(--blue)"></i>N – nulový vodič</span><span><i style="background:#2fa12f"></i>PE – ochranný vodič</span></div>
+</div>
+<div class="card">
+<div class="card-heading">Ovládání simulace <small>Klikni i na vypínač ve schématu</small></div>
+<div class="panel">
+<button id="b" type="button">Zapnout vypínač</button>
+<div class="state"><span class="state-dot" aria-hidden="true"></span><span id="stateLabel">Vypínač rozepnutý</span></div>
+<p class="status" id="s" aria-live="polite"></p>
+<h2 class="section-heading">Průběh zapojení</h2>
+<ol>
+<li class="pre"><b>1</b>Fáze L1 je přivedena do krabice KU 68.</li>
+<li class="pre"><b>2</b>Přes svorku je fáze trvale přivedena k vypínači č. 1.</li>
+<li><b>3</b>Sepnutým kontaktem se vrací do krabice.</li>
+<li><b>4</b>Svorkou jde do svítidla, které se rozsvítí.</li>
+<li><b>5</b>Nulovým vodičem N se obvod uzavře.</li>
+</ol>
+<div class="info"><p class="note"><strong>Vysvětlení:</strong> Pohybující se žluté značky na přívodu L1 znázorňují přítomnost napětí i při vypnutém vypínači. Při vypnutém vypínači neteče trvalý proud, protože je obvod rozepnutý. Po sepnutí značení ukazuje celý uzavřený obvod a svítidlo svítí.</p></div>
+<p class="note">Ochranný vodič PE (zelenožlutý) proud nenese. Chrání kovové části svítidla před nebezpečným dotykovým napětím.</p>
+</div>
+</div>
+</div>
+</main>
+<footer>Výuková simulace · Samostatný HTML soubor připravený pro GitHub Pages</footer>
+<script>
+var on=false,s=document.getElementById('s'),b=document.getElementById('b'),sw=document.getElementById('sw');
+function render(){
+document.body.classList.toggle('on',on);
+sw.setAttribute('aria-pressed',String(on));
+b.setAttribute('aria-pressed',String(on));
+b.textContent=on?'Vypnout vypínač':'Zapnout vypínač';
+document.getElementById('stateLabel').textContent=on?'Vypínač sepnutý · svítidlo svítí':'Vypínač rozepnutý · svítidlo nesvítí';
+s.textContent=on?'Vypínač je sepnutý. Obvod je uzavřený, svítidlo svítí.':'Vypínač je rozepnutý. Animace přívodu L1 běží až ke kontaktu vypínače. Je zde napětí, ale obvodem neteče proud a svítidlo nesvítí.';
+}
+function tog(){on=!on;render()}
+b.addEventListener('click',tog);
+sw.addEventListener('click',tog);
+sw.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+render();
+</script>
+</body>
+</html>
