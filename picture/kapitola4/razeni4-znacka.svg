@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="106 72 428 318" role="img" aria-labelledby="tit desc">
+<title id="tit">Grafická značka skupinového přepínače – řazení 4</title>
+<desc id="desc">Kružnice se dvěma souměrnými šikmými rameny zakončenými krátkou lomenou čárkou.</desc>
+<rect width="640" height="440" fill="#fff"/>
+<g fill="none" stroke="#172c2f" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="320" cy="288" r="82"/>
+<path d="M260 231 L168 131 L195 104"/>
+<path d="M380 231 L472 131 L445 104"/>
+</g>
+</svg>
